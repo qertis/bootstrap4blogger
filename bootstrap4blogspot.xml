@@ -42,7 +42,7 @@
 	<script type="text/javascript" src="//yandex.st/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="//yandex.st/highlightjs/7.3/highlight.min.js"></script>
 	
-	<!-- todo -->
+	<!-- TODO -->
 	<script type="text/javascript" src="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/spoiler.min.js"></script>
 	<script type="text/javascript" src="http://getbootstrap.com/examples/offcanvas/offcanvas.js"></script>
 	<script type="text/javascript" src="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/bootstrap-select.min.js"></script>
@@ -87,6 +87,11 @@
 		padding: .4em;
 	}
 	
+	h2, .h2 {
+		font-size: 18px;
+	}
+
+	
 	#header-inner {
 		width: auto!important;
 		min-height: auto!important;
@@ -95,6 +100,16 @@
 	.time {
 		float: right;
 		padding: 1em;
+	}
+	
+	.status-msg-wrap {
+		width: 100%;
+		margin: 0;
+		margin-bottom: 3em;
+	}
+
+	.PlusFollowers {
+		width: 200px;
 	}
 	
 	.post-body{
@@ -132,6 +147,10 @@
         font-weight: bold;
     }
 	
+	#nav {
+		background: currentcolor;
+	}
+	
 	#navbar-iframe {
 		width: auto;
 	}
@@ -151,6 +170,7 @@
 	#Navbar1 {
 		display: none;
 	}
+	
 	#toggle-nav {
 		line-height: 30px;
 		position: absolute;
@@ -159,7 +179,7 @@
 	}
 	
 	#sidebar img {
-		max-width: 200px;
+		max-width: 100%;
 		height: auto;
 	}
 	
@@ -1339,10 +1359,8 @@
 				<a href="//github.com/qertis">Fork me on GitHub</a>
             </div>
             <div class="col-xs-2">
-				<a href="//site.baskovsky.ru">site.baskovsky.ru</a>
-            </div>
-            <div class="col-xs-2">
-				<a href="//rss.baskovsky.ru">RSS Channel</a>
+				<a href="//feeds.feedburner.com/baskovsky
+">RSS</a>
             </div>
         </div>
 			
