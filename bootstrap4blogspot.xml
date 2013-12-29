@@ -30,22 +30,22 @@
 		
 	<!-- Styles -->
 	<link rel="stylesheet" href="//yandex.st/bootstrap/3.0.0/css/bootstrap.min.css"/> 
-	<link rel="stylesheet" href="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/bootstrap-theme.min.css"/>
-	
 	<link rel="stylesheet" href="//yandex.st/highlightjs/7.3/styles/default.min.css"/>
 	
+	<!-- CDN Styles -->
+	<link rel="stylesheet" href="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/CDN/bootstrap-theme.min.css"/>
 	<link rel="stylesheet" href="//getbootstrap.com/examples/offcanvas/offcanvas.css" />
-	<link rel="stylesheet" href="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/bootstrap-select.min.css"/>
+	<link rel="stylesheet" href="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/CDN/bootstrap-select.min.css"/>
 	
-	<!-- Libs -->
+	<!-- Scripts -->
 	<script type="text/javascript" src="//yandex.st/jquery/2.0.3/jquery.min.js"></script>
 	<script type="text/javascript" src="//yandex.st/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="//yandex.st/highlightjs/7.3/highlight.min.js"></script>
 	
-	<!-- TODO -->
-	<script type="text/javascript" src="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/spoiler.min.js"></script>
+	<!-- CDN Scripts -->
 	<script type="text/javascript" src="http://getbootstrap.com/examples/offcanvas/offcanvas.js"></script>
-	<script type="text/javascript" src="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/bootstrap-select.min.js"></script>
+	<script type="text/javascript" src="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/CDN/spoiler.min.js"></script>
+	<script type="text/javascript" src="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/CDN/bootstrap-select.min.js"></script>
 	
     <meta content='IE=EmulateIE7' http-equiv='X-UA-Compatible'/>
     <b:if cond='data:blog.isMobile'>
@@ -88,10 +88,9 @@
 	}
 	
 	h2, .h2 {
-		font-size: 18px;
+		font-size: 16px;
 	}
 
-	
 	#header-inner {
 		width: auto!important;
 		min-height: auto!important;
@@ -116,6 +115,7 @@
         text-align: justify;
         margin-bottom: 30px;
     }
+	
     .widget h3{
         border-bottom: 1px #dedede solid;
         line-height: 36px;
@@ -124,11 +124,11 @@
         list-style: none;
     }
     p, dd{
-        text-align: justify;
+        text-align: left;
     }
     a:hover img{
         text-decoration: none !important;
-        opacity: 0.7;
+        opacity: .8;
     }
     .gs-no-results-result, .gs-error-result{
         color: #b94a48;
@@ -147,18 +147,30 @@
         font-weight: bold;
     }
 	
-	#nav {
-		background: currentcolor;
-	}
-	
 	#navbar-iframe {
 		width: auto;
 	}
 	
+	.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+		border: none;
+	}
+	
+	.navbar-nav {
+		background: currentcolor;
+	}
+	
+	.btn.btn-primary.btn-xs {
+		background: rgb(51, 51, 51);
+		border: none;
+		line-height: 3em;
+		padding: 0 1.5em;
+	}
+
 	/* for archive */
 	#ArchiveList .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]) {
 		width: 100%!important;
 	}
+	
 	/* comment */
     .comments {
         margin-top: 30px;
@@ -171,18 +183,30 @@
 		display: none;
 	}
 	
-	#toggle-nav {
-		line-height: 30px;
-		position: absolute;
-		right: 0;
-		z-index: 1;
+	.navbar .navbar-form{
+		padding: 0 15px;
+		border: 0;
+		-webkit-box-shadow: none;
+		box-shadow: none;
 	}
 	
+	#toggle-nav {
+		line-height: 0;
+		position: fixed;
+		right: 1em;
+		top: 4em;
+		z-index: 9999;
+	}
+
 	#sidebar img {
 		max-width: 100%;
 		height: auto;
 	}
 	
+	#widget_bounds {
+		min-height: 0;	
+	}
+
     /* CLEAR FIX*/
     .clearfix:after {
         content: ".";
@@ -206,20 +230,33 @@
 
 <body expr:class='&quot;loading&quot; + data:blog.mobileClass'>
 
-<!-- Header -->
-<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class='navbar-brand' expr:href='data:blog.homepageUrl'><data:blog.title/></a>
-        </div><!-- /.navbar-header -->
-	
-		<div class="collapse navbar-collapse">
-			<b:section class='tabs' id='crosscol' maxwidgets='1' showaddelement='yes'>
+
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+	  <a class='navbar-brand' expr:href='data:blog.homepageUrl'><data:blog.title/></a>
+       
+      <div class="col-xs-5 col-sm-3 pull-right">
+        <form class="navbar-form" role="search" method="get" action='/search?'>
+          <div class="input-group">
+            <input class="form-control" autofocus="autofocus" placeholder="Search" name="q" type="search" />
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    <div class="navbar-collapse collapse">
+
+	  <b:section class='tabs' id='crosscol' maxwidgets='1' showaddelement='yes'>
 				<b:widget id='PageList1' locked='false' type='PageList'>
 				
 					<b:includable id='main'>
@@ -273,17 +310,18 @@
 				</div>
 			</b:if>
 			
-			<div class="nav nav-pills pull-right">
-				<form class="navbar-form navbar-left form-inline" role="search" method="get" action='/search?'>
-					<div class="form-group">
-						<input name="q" type="search" class="form-control" autofocus="autofocus" placeholder="Search" />	
-					</div>
-					<button type="submit" class="btn btn-default">Search</button>
-				</form>
-			</div>
-		</div><!-- /.nav-collapse -->
-	</div><!-- /.container -->
-</div><!-- /.navbar -->
+    </div><!--/.navbar-collapse -->
+	</div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- Header -->
+
 
 <div class="container">
 <div class="row row-offcanvas row-offcanvas-right">
@@ -1275,7 +1313,14 @@
 	  
 	<!-- SIDEBAR -->
 	<aside class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+	
+		
+			
+			
+	
 		<div id="menu" class="well sidebar-nav">
+		
+		
 			<b:section id='sidebar-right' class="nav" preferred='yes'>
 				<!-- Profile -->
 				<b:widget id='Profile1' locked='false' title='Profile' type='Profile'>
@@ -1456,6 +1501,8 @@
 		$select.addClass('selectpicker')
 			.attr('data-live-search', true);
 		$select.selectpicker();
+		
+		//TODO: input focus
     });
 </script>
 	
