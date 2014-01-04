@@ -241,7 +241,11 @@
         <span class="icon-bar"></span>
       </button>
       
-	  <a class='navbar-brand' expr:href='data:blog.homepageUrl'><data:blog.title/></a>
+	  <!-- Title and gravatar logo -->
+	  <a class='navbar-brand' expr:href='data:blog.homepageUrl'>
+	    <img src="//www.gravatar.com/avatar/89e08674193fec1b38e57ed3a5aeeb33?s=50" style="margin: -15px 0 0 0; vertical-align: top;"/>
+		<data:blog.title/>
+	  </a>
        
       <div class="col-xs-5 col-sm-3 pull-right">
         <form class="navbar-form" role="search" method="get" action='/search?'>
