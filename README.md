@@ -15,7 +15,7 @@ bootstrap4blogger
 <p>Войдите в HTML редактирование и заключите содержимое спойлера внутрь тега &lt;alert&gt;&lt;/alert&gt;</p>
 
 <h6>Использование highlight</h6>
-<pre><code>Ваш экранированный код</code></pre>
+&lt;pre&gt;&lt;code&gt;Ваш экранированный код&lt;/code&gt;&lt;/pre&gt;
 
 <br>
 <a href="//github.com/qertis/bootstrap4blogger/blob/master/bootstrap4blogspot.xml" target="_blank">
