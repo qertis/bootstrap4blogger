@@ -96,6 +96,10 @@
 		min-height: auto!important;
 	}
 	
+	.CSS_LIGHTBOX_SCALED_IMAGE_IMG {
+		margin-top: 4em;
+	}
+	
 	.time {
 		float: right;
 		padding: 1em;
