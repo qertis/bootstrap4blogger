@@ -158,6 +158,9 @@
 	.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
 		border: none;
 	}
+	.navbar {
+		z-index: 2001;
+	}
 	
 	.navbar-nav {
 		background: currentcolor;
