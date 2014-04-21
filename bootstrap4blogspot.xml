@@ -5,7 +5,6 @@
     <meta charset='utf-8'/>
     <b:include data='blog' name='all-head-content'/>
         <style type='text/css'>
-        /* forca o css do blogger a ser inserido antes dessa parte */
         /* reset.css */
         html, body, div, span, applet, object, iframe,
         h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -166,6 +165,12 @@
 		background: currentcolor;
 	}
 	
+	.navbar-brand > img {
+		border-radius: 3px;
+		margin: -15px 0 0 0; 
+		vertical-align: top;
+	}
+	
 	.btn.btn-primary.btn-xs {
 		background: rgb(51, 51, 51);
 		border: none;
@@ -250,7 +255,7 @@
       
 	  <!-- Title and gravatar logo -->
 	  <a class='navbar-brand' expr:href='data:blog.homepageUrl'>
-	    <img src="//www.gravatar.com/avatar/89e08674193fec1b38e57ed3a5aeeb33?s=50" style="margin: -15px 0 0 0; vertical-align: top;"/>
+	    <img src="//www.gravatar.com/avatar/89e08674193fec1b38e57ed3a5aeeb33?s=50" />
 		<data:blog.title/>
 	  </a>
        
