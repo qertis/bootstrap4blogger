@@ -82,14 +82,14 @@
 	
 	<b:skin><![CDATA[  
 	h1 {
-		font-size: 18px;
 		padding: .4em;
 	}
 	
-	h2, .h2 {
-		font-size: 16px;
+	.sidebar-nav h2 {
+		font-size: 20px;
+		margin: 0;
 	}
-
+	
 	#header-inner {
 		width: auto!important;
 		min-height: auto!important;
