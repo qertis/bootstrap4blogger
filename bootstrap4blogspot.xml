@@ -85,6 +85,11 @@
 		padding: .4em;
 	}
 	
+	.post-comment-link .cmt_count_iframe_holder {
+		visibility: hidden!important;
+		display: none!important;
+	}
+	
 	.sidebar-nav h2 {
 		font-size: 20px;
 		margin: 0;
@@ -331,14 +336,7 @@
   </div>
 </div>
 
-
-
-
-
-
 <!-- Header -->
-
-
 <div class="container">
 <div class="row row-offcanvas row-offcanvas-right">
 
@@ -1329,14 +1327,7 @@
 	  
 	<!-- SIDEBAR -->
 	<aside class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-	
-		
-			
-			
-	
-		<div id="menu" class="well sidebar-nav">
-		
-		
+		<div id="menu" class="well sidebar-nav">	
 			<b:section id='sidebar-right' class="nav" preferred='yes'>
 				<!-- Profile -->
 				<b:widget id='Profile1' locked='false' title='Profile' type='Profile'>
@@ -1415,7 +1406,7 @@
 <!-- footer -->
 <footer id="footer" class="bs-footer" role="contentinfo">
     <div class='container'>
-		<div class="row">
+		<!--div class="row">
             <div class="col-xs-2">
 				<a href="//github.com/qertis">Fork me on GitHub</a>
             </div>
@@ -1423,7 +1414,7 @@
 				<a href="//feeds.feedburner.com/baskovsky
 ">RSS</a>
             </div>
-        </div>
+        </div-->
 			
 		<div class='row'>
 			<div class='span3 offset1'>
@@ -1517,8 +1508,6 @@
 		$select.addClass('selectpicker')
 			.attr('data-live-search', true);
 		$select.selectpicker();
-		
-		//TODO: input focus
     });
 </script>
 	
