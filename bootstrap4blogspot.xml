@@ -94,6 +94,10 @@
 		font-size: 20px;
 		margin: 0;
 	}
+	.item-content a {
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
 	
 	#header-inner {
 		width: auto!important;
@@ -220,8 +224,19 @@
 		height: auto;
 	}
 	
+	.PopularPosts .item-title {
+		padding-bottom: .2em;
+		text-overflow: ellipsis;
+		white-space: pre-line;
+		overflow: hidden;
+	}
+
 	#widget_bounds {
 		min-height: 0;	
+	}
+	
+	.well {
+		background-image: linear-gradient(to bottom, #FFF 0, #E8E8E8 100%);
 	}
 
     /* CLEAR FIX*/
