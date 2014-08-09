@@ -974,7 +974,7 @@
 	
 					<b:if cond='data:post.hasJumpLink'>
 						<div class='jump-link'>
-							<a expr:href='data:post.url + &quot;#more&quot;' expr:title='data:post.title'>
+							<a expr:href='data:post.url + &quot;&quot;' expr:title='data:post.title'>
 								<button class='btn btn-info button-readmore' type='button'><data:post.jumpText/></button>
 							</a>
 						</div>
