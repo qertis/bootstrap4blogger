@@ -42,9 +42,9 @@
 	<script type="text/javascript" src="//yandex.st/highlightjs/7.3/highlight.min.js"></script>
 	
 	<!-- CDN Scripts -->
-	<script type="text/javascript" src="http://getbootstrap.com/examples/offcanvas/offcanvas.js"></script>
-	<script type="text/javascript" src="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/CDN/spoiler.min.js"></script>
-	<script type="text/javascript" src="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/CDN/bootstrap-select.min.js"></script>
+	<script src="http://getbootstrap.com/examples/offcanvas/offcanvas.js"></script>
+	<script src="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/CDN/spoiler.min.js"></script>
+	<script src="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/CDN/bootstrap-select.min.js"></script>
 	
     <meta content='IE=EmulateIE7' http-equiv='X-UA-Compatible'/>
     <b:if cond='data:blog.isMobile'>
@@ -239,6 +239,10 @@
 		background-image: linear-gradient(to bottom, #FFF 0, #E8E8E8 100%);
 	}
 
+	.navbar-header {
+		width: 100%;
+	}
+
     /* CLEAR FIX*/
     .clearfix:after {
         content: ".";
@@ -261,8 +265,6 @@
 </head>
 
 <body expr:class='&quot;loading&quot; + data:blog.mobileClass'>
-
-
 
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
@@ -457,7 +459,8 @@
 				</b:includable>
 			
 				<b:includable id='backlinks' var='post'>
-					<a name='links'/><h4><data:post.backlinksLabel/></h4>
+					<a name='links'/>
+					<h4><data:post.backlinksLabel/></h4>
 					<b:if cond='data:post.numBacklinks != 0'>
 						<dl class='comments-block' id='comments-block'>
 						<b:loop values='data:post.backlinks' var='backlink'>
@@ -1424,6 +1427,9 @@
 		<div class="row">
             <div class="col-xs-2">
 				<a href="//feeds.feedburner.com/baskovsky">RSS</a>
+            </div>
+            <div class="col-xs-2">
+            	<a href="//baskovsky.ru">baskovsky</a>
             </div>
         </div>
 			
