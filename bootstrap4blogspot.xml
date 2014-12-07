@@ -34,7 +34,7 @@
 	<!-- CDN Styles -->
 	<link rel="stylesheet" href="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/CDN/bootstrap-theme.min.css"/>
 	<link rel="stylesheet" href="//getbootstrap.com/examples/offcanvas/offcanvas.css" />
-	<link rel="stylesheet" href="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/CDN/bootstrap-select.min.css"/>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.css"/>
 	
 	<!-- Scripts -->
 	<script type="text/javascript" src="//yandex.st/jquery/2.0.3/jquery.min.js"></script>
@@ -42,9 +42,9 @@
 	<script type="text/javascript" src="//yandex.st/highlightjs/7.3/highlight.min.js"></script>
 	
 	<!-- CDN Scripts -->
-	<script src="http://getbootstrap.com/examples/offcanvas/offcanvas.js"></script>
-	<script src="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/CDN/spoiler.min.js"></script>
-	<script src="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/CDN/bootstrap-select.min.js"></script>
+	<script src="//getbootstrap.com/examples/offcanvas/offcanvas.js"></script>
+	<script src="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/CDN/spoiler.min.js" async></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.js"></script>
 	
     <meta content='IE=EmulateIE7' http-equiv='X-UA-Compatible'/>
     <b:if cond='data:blog.isMobile'>
@@ -165,6 +165,7 @@
 	
 	.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
 		border: none;
+		overflow: visible;
 	}
 	.navbar {
 		z-index: 2001;
