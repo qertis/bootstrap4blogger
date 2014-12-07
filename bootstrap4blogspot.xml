@@ -36,16 +36,6 @@
 	<link rel="stylesheet" href="//getbootstrap.com/examples/offcanvas/offcanvas.css" />
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.css"/>
 	
-	<!-- Scripts -->
-	<script type="text/javascript" src="//yandex.st/jquery/2.0.3/jquery.min.js"></script>
-	<script type="text/javascript" src="//yandex.st/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="//yandex.st/highlightjs/7.3/highlight.min.js"></script>
-	
-	<!-- CDN Scripts -->
-	<script src="//getbootstrap.com/examples/offcanvas/offcanvas.js"></script>
-	<script src="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/CDN/spoiler.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.js"></script>
-	
     <meta content='IE=EmulateIE7' http-equiv='X-UA-Compatible'/>
     <b:if cond='data:blog.isMobile'>
 		<meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
@@ -180,7 +170,7 @@
 		margin: -15px 0 0 0; 
 		vertical-align: top;
 	}
-	
+
 	.btn.btn-primary.btn-xs {
 		background: rgb(51, 51, 51);
 		border: none;
@@ -1491,7 +1481,14 @@
 </div><!--/.container-->
 
 <!-- Placed at the end of the document so the pages load faster --> 
-<script type='text/javascript'>
+<script src="//yandex.st/jquery/2.0.3/jquery.min.js"></script>
+<script src="//yandex.st/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//yandex.st/highlightjs/7.3/highlight.min.js"></script>	
+<script src="//getbootstrap.com/examples/offcanvas/offcanvas.js"></script>
+<script src="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/CDN/spoiler.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.js"></script>
+	
+<script>
     function elementToButton(element){
         if(typeof element !== &#39;undefined&#39;){
             if(element != &#39;d&#39;){
@@ -1518,7 +1515,11 @@
         linkToButton(&#39;.comment .comment-actions.secondary-text a&#39;);
 		  
 		/* spoilerAlert */ 
-		$('spoiler, .spoiler').spoilerAlert();
+		try {
+			$('spoiler, .spoiler').spoilerAlert();
+		} catch(e) {
+			console.log('spoiler alert is unavailable')
+		}
 
 		/* hljs */
 		hljs.tabReplace = '    ';
