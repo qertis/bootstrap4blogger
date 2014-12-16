@@ -215,6 +215,11 @@
 		height: auto;
 	}
 	
+	.post-body img {
+		max-width: 100%;
+		object-fit: contain;
+	}
+
 	.PopularPosts .item-title {
 		padding-bottom: .2em;
 		text-overflow: ellipsis;
