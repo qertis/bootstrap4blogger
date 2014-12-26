@@ -31,8 +31,9 @@
 	<link rel="stylesheet" href="//yandex.st/bootstrap/3.0.0/css/bootstrap.min.css"/> 
 	<link rel="stylesheet" href="//yandex.st/highlightjs/7.3/styles/default.min.css"/>
 	
-	<!-- CDN Styles -->
-	<link rel="stylesheet" href="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/CDN/bootstrap-theme.min.css"/>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
 	<link rel="stylesheet" href="//getbootstrap.com/examples/offcanvas/offcanvas.css" />
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.css"/>
 	
@@ -261,6 +262,10 @@
     .clearfix {
         display: block;
     }
+
+    .post-outer > a:last-child {
+		display: none;
+	}
     ]]></b:skin>
 </head>
 
@@ -428,23 +433,6 @@
 					<!-- feed links >
 					<b:include name='feedLinks'/-->
 
-					<!-- todo: это точно работает? -->
-					<b:if cond='data:top.showStars'>
-						<script src='//www.google.com/jsapi' type='text/javascript'/>
-						<script type='text/javascript'>
-							google.load(&quot;annotations&quot;, &quot;1&quot;, {&quot;locale&quot;: &quot;<data:top.languageCode/>&quot;});
-							function initialize() {
-							  google.annotations.setApplicationId(<data:top.blogspotReviews/>);
-							  google.annotations.createAll();
-							  google.annotations.fetch();
-							}
-							google.setOnLoadCallback(initialize);
-						</script>
-					</b:if>
-					
-					<b:else/>
-						<b:include name='mobile-main'/>
-					</b:if>
 					<b:if cond='data:top.showDummy'>
 						<data:top.dummyBootstrap/>
 					</b:if>
