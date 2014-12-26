@@ -21,3 +21,5 @@ bootstrap4blogger
 <a href="//github.com/qertis/bootstrap4blogger/blob/master/bootstrap4blogspot.xml" target="_blank">
   Download Template
 </a>     
+
+DEMO: http://blog.baskovsky.ru/
