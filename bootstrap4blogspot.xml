@@ -287,9 +287,9 @@
 	  </a>
        
       <div class="col-xs-5 col-sm-3 pull-right">
-        <form class="navbar-form" role="search" method="get" action='/search?'>
+        <form class="navbar-form" role="search" method="get" action="/search?" autocomplete="off">
           <div class="input-group">
-            <input class="form-control" autofocus="autofocus" placeholder="Search" name="q" type="search" />
+            <input class="form-control" autocomplete="off" autofocus="false" placeholder="Search" name="q" type="search" />
             <div class="input-group-btn">
               <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
             </div>
@@ -497,7 +497,9 @@
 					<data:post.cmtfpIframe/>
 					
 					<script type='text/javascript'>
-						BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);
+						try {
+							BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);
+						} catch(e) {}
 					</script>
 				</div>
 			</b:includable>
@@ -698,7 +700,7 @@
 	
 			<b:includable id='iframe_comments' var='post'>
 				<b:if cond='data:post.allowIframeComments'>
-					<script expr:src='data:post.iframeCommentSrc' type='text/javascript'/>
+					<script expr:src='data:post.iframeCommentSrc' type='text/javascript'></script>
 					<div class='cmt_iframe_holder' expr:data-href='data:post.canonicalUrl' expr:data-viewtype='data:post.viewType'/>
 					<b:if cond='data:post.embedCommentForm == &quot;false&quot;'>
 						<a expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><data:postCommentMsg/></a>
@@ -1107,13 +1109,15 @@
 					<data:post.cmtfpIframe/>
 						
 					<script type='text/javascript'>
+						try {
 							BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);
+						} catch(e) {}
 					</script>
 				</div>
 			</b:includable>
 				
 			<b:includable id='threaded_comment_js' var='post'>
-				<script async='async' expr:src='data:post.commentSrc' type='text/javascript'/>
+				<script expr:src='data:post.commentSrc' type='text/javascript'></script>
 
 				<script type='text/javascript'>
 				(function() {
@@ -1337,15 +1341,13 @@
 		<div id="menu" class="well sidebar-nav">	
 			<b:section id='sidebar-right' class="nav" preferred='yes'>
 				<!-- Profile -->
-				<b:widget id='Profile1' locked='false' title='Profile' type='Profile'>
+				<!--b:widget id='Profile1' locked='false' title='Profile' type='Profile'>
 					<b:includable id='main'>
 						<b:if cond='data:title != &quot;&quot;'>
 							<h4><data:title/></h4>
 						</b:if>
-						<!-- blog profile -->
 						<div class='widget-content'>
-							<!-- start team blog profile -->
-							<b:if cond='data:team == &quot;true&quot;'> 
+								<b:if cond='data:team == &quot;true&quot;'> 
 								<ul><b:loop values='data:authors' var='i'>
 									<li>
 										<a class='profile-name-link g-profile' expr:href='data:i.userUrl' expr:style='&quot;background-image: url(&quot; + data:i.profileLogo + &quot;);&quot;'>
@@ -1353,41 +1355,12 @@
 										</a>
 									</li>
 								</b:loop></ul>
-
-								<!-- start normal blog profile -->
-								<b:else/> 
-									<b:if cond='data:photo.url != &quot;&quot;'>
-										<a expr:href='data:userUrl'>
-											<img class='profile-img' expr:alt='data:photo.alt' expr:height='data:photo.height' expr:src='data:photo.url' expr:width='data:photo.width'/><!-- todo -->
-										</a>
-									</b:if>
-									<dl class='profile-datablock'>
-										<dt class='profile-data'>
-											<a class='profile-name-link g-profile' expr:href='data:userUrl' expr:style='&quot;background-image: url(&quot; + data:profileLogo + &quot;);&quot;' rel='author'>
-												<data:displayname/>
-											</a>
-											<b:if cond='data:hasgoogleprofile'>
-												<br/>
-												<div class='g-plus' data-action='follow' data-width='100' expr:data-href='data:userUrl'/>
-											</b:if>
-										</dt>
-
-										<b:if cond='data:showlocation == &quot;true&quot;'>
-											<dd class='profile-data'><data:location/></dd>
-										</b:if>
-
-										<b:if cond='data:aboutme != &quot;&quot;'>
-											<dd class='profile-textblock'><data:aboutme/></dd>
-										</b:if>
-									</dl>
-									<a class='profile-link' expr:href='data:userUrl' rel='author'>	
-										<data:viewProfileMsg/>
-									</a>
 							</b:if>
+						
 							<b:include name='quickedit'/>
-						</div><!-- end blog profile -->
+						</div>
 					</b:includable>
-				</b:widget>
+				</b:widget-->
 							  
 				<b:widget id='LinkList1' locked='false' title='Links' type='LinkList'>
 					<b:includable id='main'>
@@ -1417,7 +1390,10 @@
     <div class='container'>
 		<div class="row">
             <div class="col-xs-2">
-				<a href="//feeds.feedburner.com/baskovsky">RSS</a>
+				<a href="//feeds.feedburner.com/BaskovskyDenisBlog">RSS</a>
+            </div>
+            <div class="col-xs-2">
+				<a href="//plus.google.com/+DenisBaskovsky">g+</a>
             </div>
             <div class="col-xs-2">
             	<a href="//baskovsky.ru">baskovsky</a>
@@ -1458,9 +1434,9 @@
 <script src="//yandex.st/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//yandex.st/highlightjs/7.3/highlight.min.js"></script>	
 <script src="//getbootstrap.com/examples/offcanvas/offcanvas.js"></script>
-<script src="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/CDN/spoiler.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.js"></script>
-	
+<script async="async" src="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/CDN/spoiler.min.js"></script>
+
 <script>
     function elementToButton(element){
         if(typeof element !== &#39;undefined&#39;){
