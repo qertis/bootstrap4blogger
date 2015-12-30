@@ -17,6 +17,7 @@ bootstrap4blogger
 &lt;alert&gt;&lt;/alert&gt;
 
 Использование highlight:
+-----------------
 &lt;pre&gt;&lt;code&gt;Ваш экранированный код&lt;/code&gt;&lt;/pre&gt;
 
 <a href="//github.com/qertis/bootstrap4blogger/blob/master/bootstrap4blogspot.xml" target="_blank">
