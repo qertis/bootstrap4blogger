@@ -22,4 +22,4 @@ bootstrap4blogger
   Скачать шаблон
 </a>   
 
-DEMO: http://blog.baskovsky.ru/
+[DEMO](http://blog.baskovsky.ru/)
