@@ -9,6 +9,7 @@ bootstrap4blogger
 * [bootstrap-select](http://silviomoreto.github.io/bootstrap-select/)
 * [jquery 2](https://github.com/jquery/jquery)
 * [spoiler-alert](https://github.com/joshbuddy/spoiler-alert)
+Использован Yandex CDN для хранения клиентских библиотек
 
 Использование spoiler-alert:
 -----------------
