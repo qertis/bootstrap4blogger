@@ -1,25 +1,25 @@
 bootstrap4blogger
 =================
+>Blogger Bootstrap Theme / Шаблон Twitter Bootstrap 3 для Blogger (Blogspot)
 
-<h3>Blogger Bootstrap Theme / Шаблон twitter bootstrap 3 для blogger'a.</h3>
+Подключенные библиотеки:
+-----------------
+* [bootstrap 3](https://github.com/twbs/bootstrap)
+* [highlight.js](https://github.com/isagalaev/highlight.js)
+* [bootstrap-select](http://silviomoreto.github.io/bootstrap-select/)
+* [jquery 2](https://github.com/jquery/jquery)
+* [spoiler-alert](https://github.com/joshbuddy/spoiler-alert)
 
+Использование spoiler-alert:
+-----------------
+Войдите в HTML редактирование и оберните содержимое спойлера тегом alert 
+&lt;alert&gt;&lt;/alert&gt;
 
-<h4>Подключенные библиотеки:</h3> 
-<br>bootstrap 3       https://github.com/twbs/bootstrap
-<br>highlight.js      https://github.com/isagalaev/highlight.js
-<br>bootstrap-select  http://silviomoreto.github.io/bootstrap-select/
-<br>jquery 2.0.3      https://github.com/jquery/jquery
-<br>spoiler-alert     https://github.com/joshbuddy/spoiler-alert
-
-<h6>Использование spoiler-alert<h6>
-<p>Войдите в HTML редактирование и заключите содержимое спойлера внутрь тега &lt;alert&gt;&lt;/alert&gt;</p>
-
-<h6>Использование highlight</h6>
+Использование highlight:
 &lt;pre&gt;&lt;code&gt;Ваш экранированный код&lt;/code&gt;&lt;/pre&gt;
 
-<br>
 <a href="//github.com/qertis/bootstrap4blogger/blob/master/bootstrap4blogspot.xml" target="_blank">
-  Download Template
-</a>     
+  Скачать шаблон
+</a>   
 
 DEMO: http://blog.baskovsky.ru/
