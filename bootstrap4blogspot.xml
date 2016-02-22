@@ -28,14 +28,11 @@
     </style>	
 		
 	<!-- Styles -->
-	<link rel="stylesheet" href="//yandex.st/bootstrap/3.0.0/css/bootstrap.min.css"/> 
-	<link rel="stylesheet" href="//yandex.st/highlightjs/7.3/styles/default.min.css"/>
-	
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
-
-	<link rel="stylesheet" href="//getbootstrap.com/examples/offcanvas/offcanvas.css" />
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.css"/>
+	<link type='text/css' href='//yandex.st/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet'/> 
+	<link type='text/css' href='//yandex.st/highlightjs/8.2/styles/default.min.css' rel='stylesheet'/>
+	<!--  paper style -->
+	<link type='text/css' rel='stylesheet' href='//cdn.rawgit.com/qertis/bootstrap4blogger/master/libs/bootstrap.paper.min.css'/>
+	<link type='text/css' href='//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.css' rel='stylesheet'/>
 	
     <meta content='IE=EmulateIE7' http-equiv='X-UA-Compatible'/>
     <b:if cond='data:blog.isMobile'>
@@ -54,10 +51,10 @@
 			<meta content='article' property='og:type'/>
     </b:if>
     <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
-    <!--<meta property="og:image" content="image.jpg" />-->
+    <meta property="og:image" content="image.jpg" />
     <b:if cond='data:blog.postImageThumbnailUrl'>
         <meta expr:content='data:blog.postImageThumbnailUrl' property='og:image'/>
-    <!--<b:else/><meta content='image.jpg' property='og:image'/>-->
+    <b:else/><meta content='image.jpg' property='og:image'/>
     </b:if>
     <meta expr:content='data:blog.title' property='og:site_name'/>
     <b:if cond='data:blog.metaDescription != &quot;&quot;'>
@@ -72,10 +69,22 @@
     </b:if>
 	
 	<b:skin><![CDATA[  
-	h1 {
-		padding: .4em;
+
+	* {
+	  text-rendering: geometricPrecision;
 	}
-	
+
+	body > .container {
+	  	position: relative;
+  		top: 6rem;
+	}
+
+	.time {
+		position: relative;
+  		padding: 1em 0;
+  		z-index: 1;
+	}
+
 	.post-comment-link .cmt_count_iframe_holder {
 		visibility: hidden!important;
 		display: none!important;
@@ -110,6 +119,44 @@
 		margin-bottom: 3em;
 	}
 
+	aside#sidebar {
+		float: left;
+		padding: 0;
+		overflow: auto;
+	}
+
+	aside#sidebar #header-inner img {
+		max-width: 150px;
+	}
+
+	aside#sidebar h2 {
+		text-align: center;
+	}
+
+	aside .widget {
+	  	margin: .5em 0;
+	}
+
+	form[role="search"] input {
+	  	color: #FFF;
+	  	position: relative;
+  		right: .2em;
+	}
+
+	form[role="search"] input:active,
+	form[role="search"] input:focus,
+	form[role="search"] input:hover {
+		box-shadow: inset 0 -2px 0 #FFF;
+	}
+
+	input[placeholder]::-webkit-input-placeholder {
+	  	color: #B2DBFB;
+	}
+
+	input[placeholder]::-moz-placeholder {
+		color: #B2DBFB;
+	}
+
 	.PlusFollowers {
 		width: 200px;
 	}
@@ -119,7 +166,7 @@
         margin-bottom: 30px;
     }
 	
-    .widget h3{
+    .widget h3 {
         border-bottom: 1px #dedede solid;
         line-height: 36px;
     }
@@ -156,14 +203,26 @@
 	
 	.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
 		border: none;
-		overflow: visible;
 	}
+
+	.navbar-inverse .navbar-collapse[aria-expanded="false"],
+	.navbar-inverse .navbar-collapse[aria-expanded="true"] {
+		background: #0C7CD5;
+	  	position: absolute;
+	  	z-index: 2;
+	  	left: 0;
+	  	top: 4.9em;
+	  	right: 0;
+	  	overflow: hidden;
+	  	height: 5em;
+	}
+
 	.navbar {
 		z-index: 2001;
 	}
 	
 	.navbar-nav {
-		background: currentcolor;
+		background: transparent;
 	}
 	
 	.navbar-brand > img {
@@ -196,24 +255,20 @@
 		display: none;
 	}
 	
-	.navbar .navbar-form{
-		padding: 0 15px;
+	.navbar .navbar-form {
 		border: 0;
 		-webkit-box-shadow: none;
 		box-shadow: none;
 	}
 	
-	#toggle-nav {
-		line-height: 0;
-		position: fixed;
-		right: 1em;
-		top: 4em;
-		z-index: 9999;
-	}
-
 	#sidebar img {
 		max-width: 100%;
 		height: auto;
+	}
+
+	#main.section {
+	  	position: relative;
+	  	margin: 0;
 	}
 	
 	.post-body img {
@@ -228,12 +283,16 @@
 		overflow: hidden;
 	}
 
+	div.popular-posts ul {
+	  padding: 0;
+	}
+
 	#widget_bounds {
 		min-height: 0;	
 	}
 	
 	.well {
-		background-image: linear-gradient(to bottom, #FFF 0, #E8E8E8 100%);
+		background: transparent;
 	}
 
 	.navbar-header {
@@ -241,7 +300,7 @@
 	}
 
 	div#crosscol {
-		overflow: hidden;
+  		transform: translateY(25%);
 	}
 
     /* CLEAR FIX*/
@@ -271,13 +330,13 @@
 
 <body expr:class='&quot;loading&quot; + data:blog.mobileClass'>
 
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+<div class='navbar navbar-inverse navbar-fixed-top' role='navigation'>
+  <div class='container'>
+    <div class='navbar-header'>
+      <button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' type='button'>
+        <span class='icon-bar'/>
+        <span class='icon-bar'/>
+        <span class='icon-bar'/>
       </button>
       
 	  <!-- Title and gravatar logo -->
@@ -286,23 +345,22 @@
 		<data:blog.title/>
 	  </a>
        
-      <div class="col-xs-5 col-sm-3 pull-right">
-        <form class="navbar-form" role="search" method="get" action="/search?" autocomplete="off">
-          <div class="input-group">
-            <input class="form-control" autocomplete="off" autofocus="false" placeholder="Search" name="q" type="search" />
-            <div class="input-group-btn">
-              <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+      <div class='col-xs-5 col-sm-3 pull-right'>
+        <form action='/search?' autocomplete='off' class='navbar-form' method='get' role='search'>
+          <div class='input-group'>
+            <input autocomplete='off' class='form-control' name='q' placeholder='Поиск' type='search'/>
+            <div class='input-group-btn'>
+              <button class='btn btn-default' type='submit'><span class='glyphicon glyphicon-search'/></button>
             </div>
           </div>
         </form>
       </div>
 
-    <div class="navbar-collapse collapse">
+    <div class='navbar-collapse collapse'>
 
 	  <b:section class='tabs' id='crosscol' maxwidgets='1' showaddelement='yes'>
-				<b:widget id='PageList1' locked='false' type='PageList'>
-				
-					<b:includable id='main'>
+<b:widget id='PageList1' locked='false' title='Paginas' type='PageList'>
+  <b:includable id='main'>
 						<div class='widget-content'>
 							<b:if cond='data:mobile'>
 								<select expr:id='data:widget.instanceId + &quot;_select&quot;'>
@@ -319,7 +377,7 @@
 								<span class='pagelist-arrow'>&amp;#9660;</span>
 								
 								<b:else/>
-								<ul class="nav navbar-nav" id='nav'>
+								<ul class='nav navbar-nav' id='nav'>
 									<b:loop values='data:links' var='link'>
 										<b:if cond='data:link.isCurrentPage'>
 											<li class='active selected'>
@@ -337,9 +395,8 @@
 						</div>
 						
 					</b:includable>
-					
-				</b:widget>
-			</b:section>
+</b:widget>
+</b:section>
 			
 			<b:section class='tabs' id='crosscol-overflow' showaddelement='no'/>
 			<b:if cond='data:blog.pageType == &quot;index&quot;'>
@@ -357,8 +414,8 @@
 </div>
 
 <!-- Header -->
-<div class="container">
-<div class="row row-offcanvas row-offcanvas-right">
+<div class='container'>
+<div class='row'>
 
 <!-- Content -->
 <div class='container bs-docs-container' id='conteudo'>
@@ -366,13 +423,9 @@
 	<!-- Article -->
 	<article class='col-xs-12 col-sm-9'>
 										
-<div class="pull-right visible-xs" id="toggle-nav">
-	<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-</div>
-	
 	<b:section class='main' id='main' showaddelement='no'>
-		<b:widget id='Blog1' locked='true' title='' type='Blog'>
-			<b:includable id='main' var='top'>
+<b:widget id='Blog1' locked='true' title='Сообщения блога' type='Blog'>
+  <b:includable id='main' var='top'>
 				<b:if cond='data:mobile == &quot;false&quot;'>
 
 					<!-- posts -->
@@ -390,8 +443,8 @@
 								&lt;div class=&quot;date-outer&quot;&gt;
 							</b:if>
 							<b:if cond='data:post.dateHeader'>
-								<div class="time">
-									<i class="icon-calendar"></i> <!-- todo: to icon -->
+								<div class='time'>
+									<i class='icon-calendar'/> <!-- todo: to icon -->
 									<time><data:post.dateHeader/></time>
 								</div>
 							</b:if>
@@ -436,16 +489,14 @@
 					</b:if>
 				</b:if>
 			</b:includable>
-			
-			<b:includable id='backlinkDeleteIcon' var='backlink'>
+  <b:includable id='backlinkDeleteIcon' var='backlink'>
 				<span expr:class='&quot;item-control &quot; + data:backlink.adminClass'>
 					<a expr:href='data:backlink.deleteUrl' expr:title='data:top.deleteBacklinkMsg'>
 						<img src='//www.blogger.com/img/icon_delete13.gif'/>
 					</a>
 			</span>
 			</b:includable>
-			
-			<b:includable id='backlinks' var='post'>
+  <b:includable id='backlinks' var='post'>
 				<a name='links'/>
 				<h4><data:post.backlinksLabel/></h4>
 				<b:if cond='data:post.numBacklinks != 0'>
@@ -474,8 +525,7 @@
 						<a class='comment-link' expr:href='data:post.createLinkUrl' expr:id='data:widget.instanceId + &quot;_backlinks-create-link&quot;' target='_blank'><data:post.createLinkLabel/></a>
 					</p>
 				</b:includable>
-			
-				<b:includable id='comment-form' var='post'>
+  <b:includable id='comment-form' var='post'>
 				<div class='comment-form'>
 					<a name='comment-form'/>
 					<b:if cond='data:mobile'>
@@ -503,8 +553,7 @@
 					</script>
 				</div>
 			</b:includable>
-
-			<b:includable id='commentDeleteIcon' var='comment'>
+  <b:includable id='commentDeleteIcon' var='comment'>
 				<span expr:class='&quot;item-control &quot; + data:comment.adminClass'>
 					<b:if cond='data:showCmtPopup'>
 						<div class='goog-toggle-button'>
@@ -517,13 +566,12 @@
 					</b:if>
 				</span>
 			</b:includable>
-
-			<b:includable id='comment_count_picker' var='post'>
+  <b:includable id='comment_count_picker' var='post'>
 				<b:if cond='data:post.forceIframeComments'>
-					<span class='cmt_count_iframe_holder' expr:data-count='data:post.numComments' expr:data-onclick='data:post.addCommentOnclick' expr:data-url='data:post.canonicalUrl'></span>
+					<span class='cmt_count_iframe_holder' expr:data-count='data:post.numComments' expr:data-onclick='data:post.addCommentOnclick' expr:data-url='data:post.canonicalUrl'/>
 					<b:else/>
 					<b:if cond='data:post.commentSource == 1'>
-						<span class='cmt_count_iframe_holder' expr:data-count='data:post.numComments' expr:data-onclick='data:post.addCommentOnclick' expr:data-url='data:post.canonicalUrl'></span>
+						<span class='cmt_count_iframe_holder' expr:data-count='data:post.numComments' expr:data-onclick='data:post.addCommentOnclick' expr:data-url='data:post.canonicalUrl'/>
 						<b:else/>
 						<a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'>
 							<data:post.commentLabelFull/>:
@@ -531,8 +579,7 @@
 					</b:if>
 				</b:if>
 			</b:includable>
-
-			<b:includable id='comment_picker' var='post'>
+  <b:includable id='comment_picker' var='post'>
 				<b:if cond='data:post.forceIframeComments'>
 					<b:include data='post' name='iframe_comments'/>
 					<b:if cond='data:post.showThreadedComments'>
@@ -552,8 +599,7 @@
 					</b:if>
 				</b:if>
 			</b:includable>
-
-			<b:includable id='comments' var='post'>
+  <b:includable id='comments' var='post'>
 				<div class='comments' id='comments'>
 					<a name='comments'/>
 					<b:if cond='data:post.allowComments'>
@@ -653,7 +699,7 @@
 					
 					<b:if cond='data:showCmtPopup'>
 						<div id='comment-popup'>
-							<iframe allowtransparency='true' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'></iframe>
+							<iframe allowtransparency='true' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'/>
 						</div>
 					</b:if>
 
@@ -666,8 +712,7 @@
 					</div>
 				</div>
 			</b:includable>
-
-			<b:includable id='feedLinks'>
+  <b:includable id='feedLinks'>
 				<!-- Blog feed links -->
 				<b:if cond='data:blog.pageType != &quot;item&quot;'> 
 					<b:if cond='data:feedLinks'>
@@ -688,8 +733,7 @@
 						</div>
 				</b:if>
 			</b:includable>
-	
-			<b:includable id='feedLinksBody' var='links'>
+  <b:includable id='feedLinksBody' var='links'>
 				<div class='feed-links'>
 					<data:feedLinksMsg/>
 					<b:loop values='data:links' var='f'>
@@ -697,18 +741,16 @@
 					</b:loop>
 				</div>
 			</b:includable>
-	
-			<b:includable id='iframe_comments' var='post'>
+  <b:includable id='iframe_comments' var='post'>
 				<b:if cond='data:post.allowIframeComments'>
-					<script expr:src='data:post.iframeCommentSrc' type='text/javascript'></script>
+					<script expr:src='data:post.iframeCommentSrc' type='text/javascript'/>
 					<div class='cmt_iframe_holder' expr:data-href='data:post.canonicalUrl' expr:data-viewtype='data:post.viewType'/>
 					<b:if cond='data:post.embedCommentForm == &quot;false&quot;'>
 						<a expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><data:postCommentMsg/></a>
 					</b:if>
 				</b:if>
 			</b:includable>
-	
-			<b:includable id='mobile-index-post' var='post'>
+  <b:includable id='mobile-index-post' var='post'>
 				<div class='mobile-date-outer date-outer'>
 					<b:if cond='data:post.dateHeader'>
 						<div class='date-header'>
@@ -744,8 +786,7 @@
 					</div>
 				</div>
 			</b:includable>
-					
-			<b:includable id='mobile-main' var='top'>
+  <b:includable id='mobile-main' var='top'>
 				<!-- posts -->
 				<div class='blog-posts hfeed'>
 					<b:include data='top' name='status-message'/>
@@ -761,8 +802,7 @@
 				</div>
 				<b:include name='mobile-nextprev'/>
 			</b:includable>
-					
-			<b:includable id='mobile-nextprev'>
+  <b:includable id='mobile-nextprev'>
 				<div class='blog-pager' id='blog-pager'>
 					<b:if cond='data:newerPageUrl'>
 						<div class='mobile-link-button' id='blog-pager-newer-link'>
@@ -783,8 +823,7 @@
 				</div>
 				<div class='clear'/>
 			</b:includable>
-				
-			<b:includable id='mobile-post' var='post'>
+  <b:includable id='mobile-post' var='post'>
 				<div class='date-outer'>
 					<b:if cond='data:post.dateHeader'>
 						<h2 class='date-header'><span><data:post.dateHeader/></span></h2>
@@ -890,19 +929,18 @@
 					</div>
 				</div>
 			</b:includable>
-					
-			<b:includable id='nextprev'>
+  <b:includable id='nextprev'>
 				<div class='blog-pager' id='blog-pager'>
 					<ul class='pager'>
 						<b:if cond='data:olderPageUrl'>
 							<li class='previous' id='blog-pager-newer-link'>
-								<a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'><em class='icon-arrow-left'/> <data:olderPageTitle/></a>
+								<a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'>← <data:olderPageTitle/></a>
 							</li>
 						</b:if>
 	
 						<b:if cond='data:newerPageUrl'>
 							<li class='next' id='blog-pager-older-link'>
-								<a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'><data:newerPageTitle/> <em class='icon-arrow-right'/></a>
+								<a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'><data:newerPageTitle/> →</a>
 							</li>
 						</b:if>
 					</ul>
@@ -920,8 +958,7 @@
 				</div>
 				<div class='clear'/>
 			</b:includable>
-				
-			<b:includable id='post' var='post'>
+  <b:includable id='post' var='post'>
 				<div class='post hentry' itemprop='blogPost' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
 					<b:if cond='data:post.thumbnailUrl'>
 						<meta expr:content='data:post.thumbnailUrl' itemprop='image_url'/>
@@ -1034,8 +1071,7 @@
 					</div>
 				</div>
 			</b:includable>
-				
-			<b:includable id='postQuickEdit' var='post'>
+  <b:includable id='postQuickEdit' var='post'>
 				<b:if cond='data:post.editUrl'>
 					<span expr:class='&quot;item-control &quot; + data:post.adminClass'>
 						<a expr:href='data:post.editUrl' expr:title='data:top.editPostMsg'>
@@ -1044,8 +1080,7 @@
 					</span>
 				</b:if>
 			</b:includable>
-				
-			<b:includable id='shareButtons' var='post'>
+  <b:includable id='shareButtons' var='post'>
 				<b:if cond='data:top.showEmailButton'>
 					<a class='goog-inline-block share-button sb-email' expr:href='data:post.sharePostUrl + &quot;&amp;target=email&quot;' expr:title='data:top.emailThisMsg' target='_blank'>
 						<span class='share-button-link-text'><data:top.emailThisMsg/></span>
@@ -1075,8 +1110,7 @@
 					<div class='goog-inline-block dummy-container'><data:post.dummyTag/></div>
 				</b:if>
 			</b:includable>
-				
-			<b:includable id='status-message'>
+  <b:includable id='status-message'>
 				<b:if cond='data:navMessage'>
 					<div class='status-msg-wrap'>
 						<div class='status-msg-body alert alert-info' style='padding-right: 0px'>
@@ -1090,8 +1124,7 @@
 					<div style='clear: both;'/>
 				</b:if>
 			</b:includable>
-			
-			<b:includable id='threaded-comment-form' var='post'>
+  <b:includable id='threaded-comment-form' var='post'>
 				<div class='comment-form'>
 					<a name='comment-form'/>
 					<b:if cond='data:mobile'>
@@ -1115,9 +1148,8 @@
 					</script>
 				</div>
 			</b:includable>
-				
-			<b:includable id='threaded_comment_js' var='post'>
-				<script expr:src='data:post.commentSrc' type='text/javascript'></script>
+  <b:includable id='threaded_comment_js' var='post'>
+				<script expr:src='data:post.commentSrc' type='text/javascript'/>
 
 				<script type='text/javascript'>
 				(function() {
@@ -1297,8 +1329,7 @@
 			// ]]>
 				</script>
 			</b:includable>
-			  
-			<b:includable id='threaded_comments' var='post'>
+  <b:includable id='threaded_comments' var='post'>
 				<div class='comments' id='comments'>
 					<a name='comments'/>
 					<h4><data:post.commentLabelFull/>:</h4>
@@ -1319,7 +1350,7 @@
 				</p>
 				<b:if cond='data:showCmtPopup'>
 					<div id='comment-popup'>
-						<iframe allowtransparency='true' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'></iframe>
+						<iframe allowtransparency='true' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'/>
 					</div>
 				</b:if>
 				<div id='backlinks-container'>
@@ -1331,54 +1362,284 @@
 				</div>
 			</div>
 		</b:includable>
-
-		</b:widget>
-	</b:section>	
+</b:widget>
+</b:section>	
 	</article>
 	  
 	<!-- SIDEBAR -->
-	<aside class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-		<div id="menu" class="well sidebar-nav">	
-			<b:section id='sidebar-right' class="nav" preferred='yes'>
-				<!-- Profile -->
-				<!--b:widget id='Profile1' locked='false' title='Profile' type='Profile'>
-					<b:includable id='main'>
-						<b:if cond='data:title != &quot;&quot;'>
-							<h4><data:title/></h4>
-						</b:if>
-						<div class='widget-content'>
-								<b:if cond='data:team == &quot;true&quot;'> 
-								<ul><b:loop values='data:authors' var='i'>
-									<li>
-										<a class='profile-name-link g-profile' expr:href='data:i.userUrl' expr:style='&quot;background-image: url(&quot; + data:i.profileLogo + &quot;);&quot;'>
-											<data:i.display-name/>
-										</a>
-									</li>
-								</b:loop></ul>
-							</b:if>
-						
-							<b:include name='quickedit'/>
-						</div>
-					</b:includable>
-				</b:widget-->
-							  
-				<b:widget id='LinkList1' locked='false' title='Links' type='LinkList'>
-					<b:includable id='main'>
-						<b:if cond='data:title'>
-							<h4><data:title/></h4>
-						</b:if>
-						<div class='widget-content'>
-							<ul>
-								<b:loop values='data:links' var='link'>
-									<li><a expr:href='data:link.target'><data:link.name/></a></li>
-								</b:loop>
-							</ul>
-							<b:include name='quickedit'/>
-						</div>
-					</b:includable>
-				</b:widget>
-							  
-			</b:section>
+	<aside class='col-sm-3' id='sidebar' role='navigation'>
+		<div class='well sidebar-nav' id='menu'>	
+			<b:section class='nav' id='sidebar-right' preferred='yes'>
+<b:widget id='PopularPosts1' locked='false' title='Популярное' type='PopularPosts'>
+  <b:includable id='main'>
+  <b:if cond='data:title != &quot;&quot;'><h2><data:title/></h2></b:if>
+  <div class='widget-content popular-posts'>
+    <ul>
+      <b:loop values='data:posts' var='post'>
+      <li>
+        <b:if cond='!data:showThumbnails'>
+          <b:if cond='!data:showSnippets'>
+            <!-- (1) No snippet/thumbnail -->
+            <a expr:href='data:post.href'><data:post.title/></a>
+          <b:else/>
+            <!-- (2) Show only snippets -->
+            <div class='item-title'><a expr:href='data:post.href'><data:post.title/></a></div>
+            <div class='item-snippet'><data:post.snippet/></div>
+          </b:if>
+        <b:else/>
+          <!-- (3) Show only thumbnails or (4) Snippets and thumbnails. -->
+          <div expr:class='data:showSnippets ? &quot;item-content&quot; : &quot;item-thumbnail-only&quot;'>
+            <b:if cond='data:post.thumbnail'>
+              <div class='item-thumbnail'>
+                <a expr:href='data:post.href' target='_blank'>
+                  <img alt='' border='0' expr:height='data:thumbnailSize' expr:src='data:post.thumbnail' expr:width='data:thumbnailSize'/>
+                </a>
+              </div>
+            </b:if>
+            <div class='item-title'><a expr:href='data:post.href'><data:post.title/></a></div>
+            <b:if cond='data:showSnippets'>
+              <div class='item-snippet'><data:post.snippet/></div>
+            </b:if>
+          </div>
+          <div style='clear: both;'/>
+        </b:if>
+      </li>
+      </b:loop>
+    </ul>
+    <b:include name='quickedit'/>
+  </div>
+</b:includable>
+</b:widget>
+<b:widget id='Label1' locked='false' title='Ярлыки' type='Label'>
+  <b:includable id='main'>
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2><data:title/></h2>
+  </b:if>
+  <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
+    <b:if cond='data:display == &quot;list&quot;'>
+      <ul>
+        <b:loop values='data:labels' var='label'>
+          <li>
+            <b:if cond='data:blog.url == data:label.url'>
+              <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
+            <b:else/>
+              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+            </b:if>
+            <b:if cond='data:showFreqNumbers'>
+              <span dir='ltr'>(<data:label.count/>)</span>
+            </b:if>
+          </li>
+        </b:loop>
+      </ul>
+    <b:else/>
+      <b:loop values='data:labels' var='label'>
+        <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
+          <b:if cond='data:blog.url == data:label.url'>
+            <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
+          <b:else/>
+            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+          </b:if>
+          <b:if cond='data:showFreqNumbers'>
+            <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
+          </b:if>
+        </span>
+      </b:loop>
+    </b:if>
+    <b:include name='quickedit'/>
+  </div>
+</b:includable>
+</b:widget>
+<b:widget id='BlogArchive1' locked='false' title='Архив' type='BlogArchive'>
+  <b:includable id='main'>
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+  <div id='ArchiveList'>
+  <div expr:id='data:widget.instanceId + &quot;_ArchiveList&quot;'>
+    <b:include cond='data:style == &quot;HIERARCHY&quot;' data='data' name='interval'/>
+    <b:include cond='data:style == &quot;FLAT&quot;' data='data' name='flat'/>
+    <b:include cond='data:style == &quot;MENU&quot;' data='data' name='menu'/>
+  </div>
+  </div>
+  <b:include name='quickedit'/>
+  </div>
+</b:includable>
+  <b:includable id='flat' var='data'>
+  <ul class='flat'>
+    <b:loop values='data:data' var='i'>
+      <li class='archivedate'>
+        <a expr:href='data:i.url'><data:i.name/></a> (<data:i.post-count/>)
+      </li>
+    </b:loop>
+  </ul>
+</b:includable>
+  <b:includable id='interval' var='intervalData'>
+  <b:loop values='data:intervalData' var='interval'>
+    <ul class='hierarchy'>
+      <li expr:class='&quot;archivedate &quot; + data:interval.expclass'>
+        <b:include cond='data:interval.toggleId' data='interval' name='toggle'/>
+        <a class='post-count-link' expr:href='data:interval.url'>
+          <data:interval.name/>
+        </a>
+        <span class='post-count' dir='ltr'>(<data:interval.post-count/>)</span>
+        <b:include cond='data:interval.data' data='interval.data' name='interval'/>
+        <b:include cond='data:interval.posts' data='interval.posts' name='posts'/>
+      </li>
+    </ul>
+  </b:loop>
+</b:includable>
+  <b:includable id='menu' var='data'>
+  <select expr:id='data:widget.instanceId + &quot;_ArchiveMenu&quot;'>
+    <option value=''><data:title/></option>
+    <b:loop values='data:data' var='i'>
+      <option expr:value='data:i.url'><data:i.name/> (<data:i.post-count/>)</option>
+    </b:loop>
+  </select>
+</b:includable>
+  <b:includable id='posts' var='posts'>
+  <ul class='posts'>
+    <b:loop values='data:posts' var='post'>
+      <li><a expr:href='data:post.url'><data:post.title/></a></li>
+    </b:loop>
+  </ul>
+</b:includable>
+  <b:includable id='toggle' var='interval'>
+  <a class='toggle' href='javascript:void(0)'>
+    <span expr:class='&quot;zippy&quot; + (data:interval.expclass == &quot;expanded&quot; ? &quot; toggle-open&quot; : &quot;&quot;)'>
+      <b:if cond='data:interval.expclass == &quot;expanded&quot;'>
+        &#9660;&#160;
+      <b:elseif cond='data:blog.languageDirection == &quot;rtl&quot;'/>
+        &#9668;&#160;
+      <b:else/>
+        &#9658;&#160;
+      </b:if>
+    </span>
+  </a>
+</b:includable>
+</b:widget>
+<b:widget id='Header1' locked='true' title='Baskovsky&apos;s (заголовок)' type='Header'>
+  <b:includable id='main'>
+
+  <b:if cond='data:useImage'>
+    <b:if cond='data:imagePlacement == &quot;BEHIND&quot;'>
+      <!--
+      Show image as background to text. You can't really calculate the width
+      reliably in JS because margins are not taken into account by any of
+      clientWidth, offsetWidth or scrollWidth, so we don't force a minimum
+      width if the user is using shrink to fit.
+      This results in a margin-width's worth of pixels being cropped. If the
+      user is not using shrink to fit then we expand the header.
+      -->
+      <b:if cond='data:mobile'>
+        <div id='header-inner'>
+          <div class='titlewrapper' style='background: transparent'>
+            <h1 class='title' style='background: transparent; border-width: 0px'>
+              <b:include name='title'/>
+            </h1>
+          </div>
+          <b:include name='description'/>
+        </div>
+      <b:else/>
+        <div expr:style='&quot;background-image: url(\&quot;&quot; + data:sourceUrl + &quot;\&quot;); &quot;                      + &quot;background-position: &quot;                      + data:backgroundPositionStyleStr + &quot;; &quot;                      + data:widthStyleStr                      + &quot;min-height: &quot; + data:height                      + &quot;_height: &quot; + data:height                      + &quot;background-repeat: no-repeat; &quot;' id='header-inner'>
+          <div class='titlewrapper' style='background: transparent'>
+            <h1 class='title' style='background: transparent; border-width: 0px'>
+              <b:include name='title'/>
+            </h1>
+          </div>
+          <b:include name='description'/>
+        </div>
+      </b:if>
+    <b:else/>
+      <!--Show the image only-->
+      <div id='header-inner'>
+        <a expr:href='data:blog.homepageUrl' style='display: block'>
+          <img expr:alt='data:title' expr:height='data:height' expr:id='data:widget.instanceId + &quot;_headerimg&quot;' expr:src='data:sourceUrl' expr:width='data:width' style='display: block'/>
+        </a>
+        <!--Show the description-->
+        <b:if cond='data:imagePlacement == &quot;BEFORE_DESCRIPTION&quot;'>
+          <b:include name='description'/>
+        </b:if>
+      </div>
+    </b:if>
+  <b:else/>
+    <!--No header image -->
+    <div id='header-inner'>
+      <div class='titlewrapper'>
+        <h1 class='title'>
+          <b:include name='title'/>
+        </h1>
+      </div>
+      <b:include name='description'/>
+    </div>
+  </b:if>
+</b:includable>
+  <b:includable id='description'>
+  <div class='descriptionwrapper'>
+    <p class='description'><span><data:description/></span></p>
+  </div>
+</b:includable>
+  <b:includable id='title'>
+  <b:if cond='data:blog.url == data:blog.homepageUrl'>
+    <data:title/>
+  <b:else/>
+    <a expr:href='data:blog.homepageUrl'><data:title/></a>
+  </b:if>
+</b:includable>
+</b:widget>
+<b:widget id='Attribution1' locked='true' title='' type='Attribution'>
+  <b:includable id='main'>
+    <b:if cond='data:feedbackSurveyLink'>
+      <div class='mobile-survey-link' style='text-align: center;'>
+        <data:feedbackSurveyLink/>
+      </div>
+    </b:if>
+
+    <div class='widget-content' style='text-align: center;'>
+      <b:if cond='data:attribution != &quot;&quot;'>
+       <data:attribution/>
+      </b:if>
+    </div>
+
+    <b:include name='quickedit'/>
+  </b:includable>
+</b:widget>
+<b:widget id='Navbar1' locked='true' title='Панель навигации' type='Navbar'>
+  <b:includable id='main'>&lt;script type=&quot;text/javascript&quot;&gt;
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener(&#39;load&#39;,
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent(&#39;onload&#39;, function(){ object[attribute] = val; });
+      }
+    }
+  &lt;/script&gt;
+&lt;div id=&quot;navbar-iframe-container&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://apis.google.com/js/plusone.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+        gapi.load(&quot;gapi.iframes:gapi.iframes.style.bubble&quot;, function() {
+          if (gapi.iframes &amp;&amp; gapi.iframes.getContext) {
+            gapi.iframes.getContext().openChild({
+                url: &#39;https://draft.blogger.com/navbar.g?targetBlogID\758222949496683341611\46blogName\75Baskovsky\47s\46publishMode\75PUBLISH_MODE_HOSTED\46navbarType\75LIGHT\46layoutType\75LAYOUTS\46searchRoot\75http://blog.baskovsky.ru/search\46blogLocale\75ru\46v\0752\46homepageUrl\75http://blog.baskovsky.ru/\46vt\0756272259965735454103&#39;,
+                where: document.getElementById(&quot;navbar-iframe-container&quot;),
+                id: &quot;navbar-iframe&quot;
+            });
+          }
+        });
+      &lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
+(function() {
+var script = document.createElement(&#39;script&#39;);
+script.type = &#39;text/javascript&#39;;
+script.src = &#39;//pagead2.googlesyndication.com/pagead/js/google_top_exp.js&#39;;
+var head = document.getElementsByTagName(&#39;head&#39;)[0];
+if (head) {
+head.appendChild(script);
+}})();
+&lt;/script&gt;
+</b:includable>
+</b:widget>
+</b:section>
         </div>
 	</aside>
 	</div>
@@ -1386,17 +1647,17 @@
 </div><!--/row-->
 <hr/>
 <!-- footer -->
-<footer id="footer" class="bs-footer" role="contentinfo">
+<footer class='bs-footer' id='footer' role='contentinfo'>
     <div class='container'>
-		<div class="row">
-            <div class="col-xs-2">
-				<a href="//feeds.feedburner.com/BaskovskyDenisBlog">RSS</a>
+		<div class='row'>
+            <div class='col-xs-2'>
+				<a href='//feeds.feedburner.com/BaskovskyDenisBlog'>RSS</a>
             </div>
-            <div class="col-xs-2">
-				<a href="//plus.google.com/+DenisBaskovsky">g+</a>
+            <div class='col-xs-2'>
+				<a href='//plus.google.com/+DenisBaskovsky'>g+</a>
             </div>
-            <div class="col-xs-2">
-            	<a href="//baskovsky.ru">baskovsky</a>
+            <div class='col-xs-2'>
+            	<a href='//baskovsky.ru'>baskovsky</a>
             </div>
         </div>
 			
@@ -1405,8 +1666,8 @@
 				<ul class='unstyled justify'>
 					<small>
 					<b:section class='foot_links' id='footer-1' showaddelement='yes'>
-						<b:widget id='LinkList2' locked='false' title='Links' type='LinkList'>
-							<b:includable id='main'>
+<b:widget id='LinkList2' locked='false' title='Links' type='LinkList'>
+  <b:includable id='main'>
 								<b:if cond='data:title'>
 									<h2><data:title/></h2>
 								</b:if>
@@ -1419,8 +1680,8 @@
 									<b:include name='quickedit'/>
 								</div>
 							</b:includable>
-						</b:widget>
-					</b:section>
+</b:widget>
+</b:section>
 					</small>
 				</ul>
 			</div>
@@ -1430,14 +1691,13 @@
 </div><!--/.container-->
 
 <!-- Placed at the end of the document so the pages load faster --> 
-<script src="//yandex.st/jquery/2.0.3/jquery.min.js"></script>
-<script src="//yandex.st/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="//yandex.st/highlightjs/7.3/highlight.min.js"></script>	
-<script src="//getbootstrap.com/examples/offcanvas/offcanvas.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.js"></script>
-<script async="async" src="//googledrive.com/host/0BwV8_Loi1HFra1dMWGd2ZnB3bmM/CDN/spoiler.min.js"></script>
+<script type='text/javascript' src='//yandex.st/jquery/2.1.1/jquery.min.js'/>
+<script type='text/javascript' src='//yandex.st/bootstrap/3.3.1/js/bootstrap.min.js'/>
+<script type='text/javascript' src='//yandex.st/highlightjs/8.2/highlight.min.js'/>	
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.js'/>
+<script type='text/javascript' src='//cdn.rawgit.com/qertis/bootstrap4blogger/master/libs/spoiler.min.js'/>
 
-<script>
+<script type='text/javascript'>
     function elementToButton(element){
         if(typeof element !== &#39;undefined&#39;){
             if(element != &#39;d&#39;){
@@ -1447,14 +1707,14 @@
             }
         }
     }
-    function linkToButton(classe){
+    function linkToButton(classe) {
         var reply = $(classe);
-        if(reply instanceof Array){
+        if (reply instanceof Array){
             for(r in reply){
 				elementToButton(r);
             }
         }
-        else{
+        else {
 			elementToButton(reply);
         }
     }
@@ -1465,20 +1725,20 @@
 		  
 		/* spoilerAlert */ 
 		try {
-			$('spoiler, .spoiler').spoilerAlert();
+			$(&#39;spoiler, .spoiler&#39;).spoilerAlert();
 		} catch(e) {
-			console.log('spoiler alert is unavailable')
+			console.log(&#39;spoiler alert is unavailable&#39;)
 		}
 
 		/* hljs */
-		hljs.tabReplace = '    ';
-		$('pre code').each(function(i, e) {
+		hljs.tabReplace = &#39;    &#39;;
+		$(&#39;pre code&#39;).each(function(i, e) {
 			hljs.highlightBlock(e);
 		});
 		  
-		var $select = $('select');
-		$select.addClass('selectpicker')
-			.attr('data-live-search', true);
+		var $select = $(&#39;select&#39;);
+		$select.addClass(&#39;selectpicker&#39;)
+			.attr(&#39;data-live-search&#39;, true);
 		$select.selectpicker();
     });
 </script>
