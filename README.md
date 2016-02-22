@@ -1,6 +1,5 @@
 #bootstrap4blogger
-=================
-> Blogger Bootstrap Theme / Шаблон Twitter Bootstrap 3 для Blogger (Blogspot)
+> Blogger Bootstrap Paper Theme
 
 Подключенные библиотеки:
 -----------------
