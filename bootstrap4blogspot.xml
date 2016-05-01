@@ -28,11 +28,11 @@
     </style>	
 		
 	<!-- Styles -->
-	<link type='text/css' href='//yandex.st/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet'/> 
-	<link type='text/css' href='//yandex.st/highlightjs/8.2/styles/default.min.css' rel='stylesheet'/>
+	<link href='//yandex.st/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet' type='text/css'/> 
+	<link href='//yandex.st/highlightjs/8.2/styles/default.min.css' rel='stylesheet' type='text/css'/>
 	<!--  paper style -->
-	<link type='text/css' rel='stylesheet' href='//cdn.rawgit.com/qertis/bootstrap4blogger/master/libs/bootstrap.paper.min.css'/>
-	<link type='text/css' href='//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.css' rel='stylesheet'/>
+	<link href='//cdn.rawgit.com/qertis/bootstrap4blogger/master/libs/bootstrap.paper.min.css' rel='stylesheet' type='text/css'/>
+	<link href='//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.css' rel='stylesheet' type='text/css'/>
 	
     <meta content='IE=EmulateIE7' http-equiv='X-UA-Compatible'/>
     <b:if cond='data:blog.isMobile'>
@@ -41,6 +41,8 @@
 		<meta content='width=1100' name='viewport'/>
     </b:if>
     <meta content='Denis Baskovsky' name='author'/>
+    <meta name="copyright" content="baskovsky"/>
+    <meta name="theme-color" content="#2094F3"/>
 
     <!-- Facebook OpenGraph -->
     <b:if cond='data:blog.pageType == &quot;index&quot;'>
@@ -51,7 +53,7 @@
 			<meta content='article' property='og:type'/>
     </b:if>
     <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
-    <meta property="og:image" content="image.jpg" />
+    <meta content='image.jpg' property='og:image'/>
     <b:if cond='data:blog.postImageThumbnailUrl'>
         <meta expr:content='data:blog.postImageThumbnailUrl' property='og:image'/>
     <b:else/><meta content='image.jpg' property='og:image'/>
@@ -75,6 +77,11 @@
 	  		text-rendering: geometricPrecision;
 		}
 	}
+
+	span, p {
+		  font-size: 17.8px;
+	}
+
 	body > .container {
 	  	position: relative;
   		top: 6rem;
@@ -334,7 +341,7 @@
     <div class='navbar-collapse collapse'>
 
 	  <b:section class='tabs' id='crosscol' maxwidgets='1' showaddelement='yes'>
-<b:widget id='PageList1' locked='false' title='Paginas' type='PageList'>
+<b:widget id='PageList1' locked='false' title='Paginas' type='PageList' visible='true'>
   <b:includable id='main'>
 						<div class='widget-content'>
 							<b:if cond='data:mobile'>
@@ -408,7 +415,7 @@
 	<article class='col-xs-12 col-sm-9'>
 										
 	<b:section class='main' id='main' showaddelement='no'>
-<b:widget id='Blog1' locked='true' title='Сообщения блога' type='Blog'>
+<b:widget id='Blog1' locked='true' title='Сообщения блога' type='Blog' visible='true'>
   <b:includable id='main' var='top'>
 				<b:if cond='data:mobile == &quot;false&quot;'>
 
@@ -918,13 +925,13 @@
 					<ul class='pager'>
 						<b:if cond='data:olderPageUrl'>
 							<li class='previous' id='blog-pager-newer-link'>
-								<a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'>← <data:olderPageTitle/></a>
+								<a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'>&#8592; <data:olderPageTitle/></a>
 							</li>
 						</b:if>
 	
 						<b:if cond='data:newerPageUrl'>
 							<li class='next' id='blog-pager-older-link'>
-								<a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'><data:newerPageTitle/> →</a>
+								<a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'><data:newerPageTitle/> &#8594;</a>
 							</li>
 						</b:if>
 					</ul>
@@ -1354,7 +1361,7 @@
 	<aside class='col-sm-3' id='sidebar' role='navigation'>
 		<div class='well sidebar-nav' id='menu'>	
 			<b:section class='nav' id='sidebar-right' preferred='yes'>
-<b:widget id='PopularPosts1' locked='false' title='Популярное' type='PopularPosts'>
+<b:widget id='PopularPosts1' locked='false' title='Популярное' type='PopularPosts' visible='true'>
   <b:includable id='main'>
   <b:if cond='data:title != &quot;&quot;'><h2><data:title/></h2></b:if>
   <div class='widget-content popular-posts'>
@@ -1373,10 +1380,12 @@
         <b:else/>
           <!-- (3) Show only thumbnails or (4) Snippets and thumbnails. -->
           <div expr:class='data:showSnippets ? &quot;item-content&quot; : &quot;item-thumbnail-only&quot;'>
-            <b:if cond='data:post.thumbnail'>
+            <b:if cond='data:post.featuredImage'>
               <div class='item-thumbnail'>
                 <a expr:href='data:post.href' target='_blank'>
-                  <img alt='' border='0' expr:height='data:thumbnailSize' expr:src='data:post.thumbnail' expr:width='data:thumbnailSize'/>
+                  <b:with value='data:post.featuredImage.isResizable                                  ? resizeImage(data:post.featuredImage, 72, &quot;1:1&quot;)                                  : data:post.thumbnail' var='image'>
+                    <img alt='' border='0' expr:src='data:image'/>
+                  </b:with>
                 </a>
               </div>
             </b:if>
@@ -1394,7 +1403,7 @@
   </div>
 </b:includable>
 </b:widget>
-<b:widget id='Label1' locked='false' title='Ярлыки' type='Label'>
+<b:widget id='Label1' locked='false' title='Ярлыки' type='Label' visible='true'>
   <b:includable id='main'>
   <b:if cond='data:title != &quot;&quot;'>
     <h2><data:title/></h2>
@@ -1433,7 +1442,7 @@
   </div>
 </b:includable>
 </b:widget>
-<b:widget id='BlogArchive1' locked='false' title='Архив' type='BlogArchive'>
+<b:widget id='BlogArchive1' locked='false' title='Архив' type='BlogArchive' visible='true'>
   <b:includable id='main'>
   <b:if cond='data:title != &quot;&quot;'>
     <h2><data:title/></h2>
@@ -1502,7 +1511,7 @@
   </a>
 </b:includable>
 </b:widget>
-<b:widget id='Header1' locked='true' title='Baskovsky&apos;s (заголовок)' type='Header'>
+<b:widget id='Header1' locked='true' title='Baskovsky&apos;s (заголовок)' type='Header' visible='true'>
   <b:includable id='main'>
 
   <b:if cond='data:useImage'>
@@ -1571,7 +1580,7 @@
   </b:if>
 </b:includable>
 </b:widget>
-<b:widget id='Attribution1' locked='true' title='' type='Attribution'>
+<b:widget id='Attribution1' locked='true' title='' type='Attribution' visible='true'>
   <b:includable id='main'>
     <b:if cond='data:feedbackSurveyLink'>
       <div class='mobile-survey-link' style='text-align: center;'>
@@ -1588,7 +1597,7 @@
     <b:include name='quickedit'/>
   </b:includable>
 </b:widget>
-<b:widget id='Navbar1' locked='true' title='Панель навигации' type='Navbar'>
+<b:widget id='Navbar1' locked='true' title='Панель навигации' type='Navbar' visible='true'>
   <b:includable id='main'>&lt;script type=&quot;text/javascript&quot;&gt;
     function setAttributeOnload(object, attribute, val) {
       if(window.addEventListener) {
@@ -1602,16 +1611,16 @@
 &lt;div id=&quot;navbar-iframe-container&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;https://apis.google.com/js/plusone.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
-        gapi.load(&quot;gapi.iframes:gapi.iframes.style.bubble&quot;, function() {
-          if (gapi.iframes &amp;&amp; gapi.iframes.getContext) {
-            gapi.iframes.getContext().openChild({
-                url: &#39;https://draft.blogger.com/navbar.g?targetBlogID\758222949496683341611\46blogName\75Baskovsky\47s\46publishMode\75PUBLISH_MODE_HOSTED\46navbarType\75LIGHT\46layoutType\75LAYOUTS\46searchRoot\75http://blog.baskovsky.ru/search\46blogLocale\75ru\46v\0752\46homepageUrl\75http://blog.baskovsky.ru/\46vt\0756272259965735454103&#39;,
-                where: document.getElementById(&quot;navbar-iframe-container&quot;),
-                id: &quot;navbar-iframe&quot;
-            });
-          }
-        });
-      &lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
+      gapi.load(&quot;gapi.iframes:gapi.iframes.style.bubble&quot;, function() {
+        if (gapi.iframes &amp;&amp; gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: &#39;https://draft.blogger.com/navbar.g?targetBlogID\x3d8222949496683341611\x26blogName\x3dBaskovsky\x27s\x26publishMode\x3dPUBLISH_MODE_HOSTED\x26navbarType\x3dDISABLED\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttp://blog.baskovsky.ru/search\x26blogLocale\x3dru\x26v\x3d2\x26homepageUrl\x3dhttp://blog.baskovsky.ru/\x26vt\x3d6272259965735454103&#39;,
+              where: document.getElementById(&quot;navbar-iframe-container&quot;),
+              id: &quot;navbar-iframe&quot;
+          });
+        }
+      });
+    &lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
 (function() {
 var script = document.createElement(&#39;script&#39;);
 script.type = &#39;text/javascript&#39;;
@@ -1650,7 +1659,7 @@ head.appendChild(script);
 				<ul class='unstyled justify'>
 					<small>
 					<b:section class='foot_links' id='footer-1' showaddelement='yes'>
-<b:widget id='LinkList2' locked='false' title='Links' type='LinkList'>
+<b:widget id='LinkList2' locked='false' title='Links' type='LinkList' visible='true'>
   <b:includable id='main'>
 								<b:if cond='data:title'>
 									<h2><data:title/></h2>
@@ -1675,11 +1684,11 @@ head.appendChild(script);
 </div><!--/.container-->
 
 <!-- Placed at the end of the document so the pages load faster --> 
-<script type='text/javascript' src='//yandex.st/jquery/2.1.1/jquery.min.js'/>
-<script type='text/javascript' src='//yandex.st/bootstrap/3.3.1/js/bootstrap.min.js'/>
-<script type='text/javascript' src='//yandex.st/highlightjs/8.2/highlight.min.js'/>	
-<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js'/>
-<script type='text/javascript' src='//cdn.rawgit.com/qertis/bootstrap4blogger/master/libs/spoiler.min.js'/>
+<script src='//yandex.st/jquery/2.1.1/jquery.min.js' type='text/javascript'/>
+<script src='//yandex.st/bootstrap/3.3.1/js/bootstrap.min.js' type='text/javascript'/>
+<script src='//yandex.st/highlightjs/8.2/highlight.min.js' type='text/javascript'/>	
+<script src='//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js' type='text/javascript'/>
+<script src='//cdn.rawgit.com/qertis/bootstrap4blogger/master/libs/spoiler.min.js' type='text/javascript'/>
 
 <script type='text/javascript'>
     function elementToButton(element) {
