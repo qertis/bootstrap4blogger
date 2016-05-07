@@ -81,6 +81,10 @@
 	span, p {
 		  font-size: 17.8px;
 	}
+	
+	code * {
+  		font-size: inherit;
+	}
 
 	body > .container {
 	  	position: relative;
