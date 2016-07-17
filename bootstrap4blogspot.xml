@@ -77,15 +77,27 @@
 	  		text-rendering: geometricPrecision;
 		}
 	}
-
 	span, p {
 		  font-size: 17.8px;
 	}
-	
+	.post-body span {
+  	font-size: inherit;
+	}
+	td.tr-caption > span {
+  	font-size: inherit !important;
+	}
+	blockquote {
+	  font-size: inherit;
+	}
+	.descriptionwrapper .description span {
+  	font-size: smaller;
+	}
 	code * {
   		font-size: inherit;
 	}
-
+	ol {
+ 	 margin-left: 11.5px;
+	}
 	body > .container {
 	  	position: relative;
   		top: 6rem;
@@ -162,76 +174,69 @@
         text-align: justify;
         margin-bottom: 30px;
     }
-    .widget h3 {
-        border-bottom: 1px #dedede solid;
-        line-height: 36px;
-    }
-    .widget-content ul li{
-        list-style: none;
-    }
-    p, dd{
-        text-align: left;
-    }
-    a:hover img {
-        text-decoration: none !important;
-        opacity: .8;
-    }
-    .gs-no-results-result, .gs-error-result{
-        color: #b94a48;
-        background-color: #f2dede;
-        border-color: #eed3d7;
-    }
-    .btn-info {
-        background-color: #99ddff;
-    }
+  .widget h3 {
+      border-bottom: 1px #dedede solid;
+      line-height: 36px;
+  }
+  .widget-content ul li{
+      list-style: none;
+  }
+  p, dd{
+      text-align: left;
+  }
+  a:hover img {
+      text-decoration: none !important;
+      opacity: .8;
+  }
+  .gs-no-results-result, .gs-error-result{
+      color: #b94a48;
+      background-color: #f2dede;
+      border-color: #eed3d7;
+  }
+  .btn-info {
+      background-color: #99ddff;
+  }
 	span.label {
 		color: #000;
 	}
 	.selected {
         font-weight: bold;
-    }
+  }
 	#navbar-iframe {
 		width: auto;
 	}
 	.navbar-inverse .navbar-collapse {
 		flex: 5;
 	}
-	
 	.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
 		border: none;
 	}
-
 	.navbar-inverse .navbar-collapse[aria-expanded="false"],
 	.navbar-inverse .navbar-collapse[aria-expanded="true"] {
 		background: #0C7CD5;
-	  	position: absolute;
-	  	z-index: 2;
-	  	left: 0;
-	  	top: 4.9em;
-	  	right: 0;
-	  	overflow: hidden;
-	  	box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+	  position: absolute;
+	  z-index: 2;
+	  left: 0;
+	  top: 4.9em;
+	  right: 0;
+	  overflow: hidden;
+	  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
 	}
-
 	.navbar {
 		z-index: 2001;
 	}
-	
 	.navbar-nav {
 		background: transparent;
 	}
-
 	.navbar-header a.navbar-brand {
 		margin: 0;
   		flex: 1;
 	}
-	
 	.navbar-brand > img {
 		border-radius: 3px;
 		margin: -15px 0 0 0; 
 		vertical-align: top;
 	}
-
 	.btn.btn-primary.btn-xs {
 		background: rgb(51, 51, 51);
 		border: none;
@@ -245,12 +250,12 @@
 	}
 	
 	/* Comment */
-    .comments {
-        margin-top: 30px;
-    }
+  .comments {
+      margin-top: 30px;
+  }
 	.comment .continue a {
-        display: inline;
-    }
+      display: inline;
+  }
 	
 	#Navbar1 {
 		display: none;
@@ -300,26 +305,32 @@
 		min-width: 100%;
 		width: 100%;
 		display: flex;
-  		align-items: center;
-  		justify-content: space-between;
-  		flex-direction: row;
+  	align-items: center;
+  	justify-content: space-between;
+  	flex-direction: row;
 	}
 
-    /* CLEAR FIX*/
-    .clearfix:after {
-        content: ".";
-        display: block;
-        height: 0;
-        clear: both;
-        visibility: hidden;
-    }
-    .clearfix {
-        display: inline-block;
-    }
-    .clearfix {
-        display: block;
-    }
-    .post-outer > a:last-child {
+	/* disable blogger link */
+	a[href$="www.blogger.com"] {
+  	color: inherit;
+  	pointer-events: none;
+	}
+
+  /* CLEAR FIX*/
+  .clearfix:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+  }
+  .clearfix {
+      display: inline-block;
+  }
+  .clearfix {
+      display: block;
+  }
+  .post-outer > a:last-child {
 		display: none;
 	}
     ]]></b:skin>
@@ -338,7 +349,6 @@
       
 	  <!-- Title and gravatar logo -->
 	  <a class='navbar-brand' expr:href='data:blog.homepageUrl'>
-	    <!--img src="//www.gravatar.com/avatar/89e08674193fec1b38e57ed3a5aeeb33?s=50" /-->
 		<data:blog.title/>
 	  </a>
        
@@ -1651,7 +1661,7 @@ head.appendChild(script);
 				<a href='//feeds.feedburner.com/BaskovskyDenisBlog'>RSS</a>
             </div>
             <div class='col-xs-2'>
-				<a href='//plus.google.com/+DenisBaskovsky'>g+</a>
+				<a href='//plus.google.com/+DenisBaskovsky'>G+</a>
             </div>
             <div class='col-xs-2'>
             	<a href='//baskovsky.ru'>baskovsky</a>
@@ -1698,7 +1708,7 @@ head.appendChild(script);
     function elementToButton(element) {
         if(typeof element !== &#39;undefined&#39;) {
             if(element != &#39;d&#39;) {
-				element.addClass(&#39;btn&#39;);
+								element.addClass(&#39;btn&#39;);
                 element.addClass(&#39;btn-small&#39;);
                 element.css(&#39;textDecoration&#39;, &#39;none&#39;);
             }
@@ -1707,21 +1717,21 @@ head.appendChild(script);
     function linkToButton(classe) {
         var reply = $(classe);
         if (reply instanceof Array) {
-            for(r in reply) {
-				elementToButton(r);
-            }
+          for(r in reply) {
+						elementToButton(r);
+          }
         } else {
-			elementToButton(reply);
+					elementToButton(reply);
         }
     }
 	
     $(document).ready(function() {
-        linkToButton(&#39;.comment .continue a&#39;);
-        linkToButton(&#39;.comment .comment-actions.secondary-text a&#39;);
+      linkToButton(&#39;.comment .continue a&#39;);
+      linkToButton(&#39;.comment .comment-actions.secondary-text a&#39;);
 		
-		initSpoilers();
-		initHljs();
-		initSelectPicker();
+			initSpoilers();
+			initHljs();
+			initSelectPicker();
 		  
 		/* spoilerAlert */
 		function initSpoilers() {
