@@ -230,7 +230,7 @@
 	}
 	.navbar-header a.navbar-brand {
 		margin: 0;
-  		flex: 1;
+  	flex: 1;
 	}
 	.navbar-brand > img {
 		border-radius: 3px;
@@ -243,7 +243,6 @@
 		line-height: 3em;
 		padding: 0 1.5em;
 	}
-
 	/* For archive */
 	#ArchiveList .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]) {
 		width: 100%!important;
@@ -256,7 +255,9 @@
 	.comment .continue a {
       display: inline;
   }
-	
+	a.navbar-brand {
+  	white-space: nowrap;
+	}
 	#Navbar1 {
 		display: none;
 	}
