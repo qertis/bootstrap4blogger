@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr' xmlns:og='http://ogp.me/ns#'>
+<html b:version='2' class='v2' lang="ru" expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr' xmlns:og='http://ogp.me/ns#'>
 <head>
     <meta charset='utf-8'/>
     <b:include data='blog' name='all-head-content'/>
@@ -44,6 +44,15 @@
     <meta name="copyright" content="baskovsky"/>
     <meta name="theme-color" content="#2094F3"/>
 
+ 	  <!-- Twitter -->
+  	<meta name="twitter:card" content="summary_large_image"/>
+  	<meta name="twitter:site" content="@qkqp"/>
+  	<meta name="twitter:creator" content="@qkqp"/>
+  	<meta name="twitter:title" content="Denis Baskovsky"/>
+  	<meta name="twitter:description" content="Программная инженерия: UI, WebDev, GameDev, обзоры"/>
+  	<meta name="twitter:image" content="//www.gravatar.com/avatar/89e08674193fec1b38e57ed3a5aeeb33?s=200"/>
+  	<!-- /Twitter -->
+
     <!-- Facebook OpenGraph -->
     <b:if cond='data:blog.pageType == &quot;index&quot;'>
         <meta expr:content='data:blog.pageTitle' property='og:title'/>
@@ -64,18 +73,40 @@
 	<b:else/>
         <meta expr:content='data:blog.pageTitle' property='og:description '/>
     </b:if>
-    <!-- Facebook OpenGraph -->
+    <!-- /Facebook OpenGraph -->
     <title><data:blog.pageTitle/></title>
     <b:if cond='data:blog.metaDescription == &quot;&quot;'>
         <meta expr:content='data:blog.pageTitle' name='description'/>
     </b:if>
+
+    <script type="application/ld+json">
+{ 
+  "@context": "http://schema.org", 
+  "@type": "WebSite", 
+  "url": "http://blog.baskovsky.ru/", 
+  "name": "Baskovsky's",
+   "author": {
+      "@type": "Person",
+      "name": "Denis Baskovsky"
+    },
+  "description": "Программная инженерия, UI, WebDev, GameDev, обзоры, лайфхаки",
+  "publisher": "Denis Baskovsky",
+  "potentialAction": { 
+    "@type": "SearchAction", 
+    "target": "http://blog.baskovsky.ru/search?q={search_term}", 
+    "query-input": "required name=search_term" 
+    } 
+}
+</script>
 	
 	<b:skin><![CDATA[  
-
 	@media (min-width:1281px) { /* hi-res laptops and desktops */ 
 		* {
 	  		text-rendering: geometricPrecision;
 		}
+	}
+	body {
+	  font-size: 16px;
 	}
 	span, p {
 		  font-size: 17.8px;
