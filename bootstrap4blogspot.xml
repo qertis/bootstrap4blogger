@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html b:version='2' class='v2' lang="ru" expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr' xmlns:og='http://ogp.me/ns#'>
 <head>
-    <meta charset='utf-8'/>
+    <meta charset="utf-8"/>
     <b:include data='blog' name='all-head-content'/>
         <style type='text/css'>
         /* reset.css */
@@ -25,23 +25,32 @@
         body {
           line-height: 1;
         }
-    </style>	
-		
+    </style>
+    <link rel="dns-prefetch" href="//yandex.st"/>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+    <link rel="dns-prefetch" href="//cdn.rawgit.com"/>
+    <link rel="dns-prefetch" href="//adservice.google.ru"/>
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com"/>
+    <link rel="preconnect" href="//www.blogger.com"/>
+    <link rel="preconnect" href="//apis.google.com"/>
+    <link rel="preload" href="//yandex.st/bootstrap/3.3.1/js/bootstrap.min.js" as="script"/>
 	<!-- Styles -->
 	<link href='//yandex.st/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet' type='text/css'/> 
 	<link href='//yandex.st/highlightjs/8.2/styles/default.min.css' rel='stylesheet' type='text/css'/>
 	<!--  paper style -->
 	<link href='//cdn.rawgit.com/qertis/bootstrap4blogger/master/libs/bootstrap.paper.min.css' rel='stylesheet' type='text/css'/>
 	<link href='//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.css' rel='stylesheet' type='text/css'/>
-	
+
+    <meta http-equiv='x-dns-prefetch-control' content='on'/>
+    <meta name="keywords" lang="ru" content="baskovsky's blog, блог басковского"/>
     <meta content='IE=EmulateIE7' http-equiv='X-UA-Compatible'/>
     <b:if cond='data:blog.isMobile'>
-		<meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
+		<meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.5'/>
     <b:else/>
-		<meta content='width=1100' name='viewport'/>
+		<meta name='viewport' content='width=1100,initial-scale=1'/>
     </b:if>
-    <meta content='Denis Baskovsky' name='author'/>
-    <meta name="copyright" content="baskovsky"/>
+    <meta name="author" content="Denis Baskovsky"/>
+    <meta name="copyright" content="Denis Baskovsky"/>
     <meta name="theme-color" content="#2094F3"/>
 
  	  <!-- Twitter -->
@@ -80,24 +89,24 @@
     </b:if>
 
     <script type="application/ld+json">
-{ 
-  "@context": "http://schema.org", 
-  "@type": "WebSite", 
-  "url": "http://blog.baskovsky.ru/", 
-  "name": "Baskovsky's",
-   "author": {
-      "@type": "Person",
-      "name": "Denis Baskovsky"
-    },
-  "description": "Программная инженерия, UI, WebDev, GameDev, обзоры, лайфхаки",
-  "publisher": "Denis Baskovsky",
-  "potentialAction": { 
-    "@type": "SearchAction", 
-    "target": "http://blog.baskovsky.ru/search?q={search_term}", 
-    "query-input": "required name=search_term" 
-    } 
-}
-</script>
+        {
+		  "@context": "https://schema.org",
+		  "@type": "WebSite",
+		  "url": "https://blog.baskovsky.ru/",
+		  "name": "Baskovsky's",
+		  "author": {
+		    "@type": "Person",
+			"name": "Denis Baskovsky"
+          },
+		  "description": "Программная инженерия, UI, WebDev, GameDev, обзоры, лайфхаки",
+		  "publisher": "Denis Baskovsky",
+		  "potentialAction": {
+		    "@type": "SearchAction",
+			"target": "https://blog.baskovsky.ru/search?q={search_term}",
+			"query-input": "required name=search_term"
+          }
+		}
+    </script>
 	
 	<b:skin><![CDATA[  
 	@media (min-width:1281px) { /* hi-res laptops and desktops */ 
@@ -112,22 +121,22 @@
 		  font-size: 17.8px;
 	}
 	.post-body span {
-  	font-size: inherit;
+  		font-size: inherit;
 	}
 	td.tr-caption > span {
-  	font-size: inherit !important;
+  		font-size: inherit !important;
 	}
 	blockquote {
-	  font-size: inherit;
+	  	font-size: inherit;
 	}
 	.descriptionwrapper .description span {
-  	font-size: smaller;
+  		font-size: smaller;
 	}
 	code * {
   		font-size: inherit;
 	}
 	ol {
- 	 margin-left: 11.5px;
+ 	 	margin-left: 11.5px;
 	}
 	body > .container {
 	  	position: relative;
@@ -205,34 +214,34 @@
         text-align: justify;
         margin-bottom: 30px;
     }
-  .widget h3 {
-      border-bottom: 1px #dedede solid;
-      line-height: 36px;
-  }
-  .widget-content ul li{
-      list-style: none;
-  }
-  p, dd{
-      text-align: left;
-  }
-  a:hover img {
-      text-decoration: none !important;
-      opacity: .8;
-  }
-  .gs-no-results-result, .gs-error-result{
-      color: #b94a48;
-      background-color: #f2dede;
-      border-color: #eed3d7;
-  }
-  .btn-info {
-      background-color: #99ddff;
-  }
+  	.widget h3 {
+      	border-bottom: 1px #dedede solid;
+      	line-height: 36px;
+  	}
+  	.widget-content ul li{
+      	list-style: none;
+  	}
+  	p, dd{
+      	text-align: left;
+  	}
+  	a:hover img {
+      	text-decoration: none !important;
+      	opacity: .8;
+  	}
+  	.gs-no-results-result, .gs-error-result{
+      	color: #b94a48;
+      	background-color: #f2dede;
+      	border-color: #eed3d7;
+  	}
+  	.btn-info {
+      	background-color: #99ddff;
+  	}
 	span.label {
 		color: #000;
 	}
 	.selected {
         font-weight: bold;
-  }
+  	}
 	#navbar-iframe {
 		width: auto;
 	}
@@ -245,13 +254,13 @@
 	.navbar-inverse .navbar-collapse[aria-expanded="false"],
 	.navbar-inverse .navbar-collapse[aria-expanded="true"] {
 		background: #0C7CD5;
-	  position: absolute;
-	  z-index: 2;
-	  left: 0;
-	  top: 4.9em;
-	  right: 0;
-	  overflow: hidden;
-	  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+	  	position: absolute;
+	  	z-index: 2;
+	  	left: 0;
+	  	top: 4.9em;
+	  	right: 0;
+	  	overflow: hidden;
+	  	box-shadow: 0 1px 2px rgba(0,0,0,.3);
 	}
 	.navbar {
 		z-index: 2001;
@@ -261,7 +270,7 @@
 	}
 	.navbar-header a.navbar-brand {
 		margin: 0;
-  	flex: 1;
+  		flex: 1;
 	}
 	.navbar-brand > img {
 		border-radius: 3px;
@@ -278,91 +287,79 @@
 	#ArchiveList .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]) {
 		width: 100%!important;
 	}
-	
 	/* Comment */
-  .comments {
-      margin-top: 30px;
-  }
+  	.comments {
+      	margin-top: 30px;
+  	}
 	.comment .continue a {
-      display: inline;
-  }
+      	display: inline;
+  	}
 	a.navbar-brand {
-  	white-space: nowrap;
+  		white-space: nowrap;
 	}
 	#Navbar1 {
 		display: none;
 	}
-	
 	.navbar .navbar-form {
 		border: 0;
 		box-shadow: none;
 		margin: 0;
 	}
-	
 	#sidebar img {
 		max-width: 100%;
 		height: auto;
 	}
-
 	#main.section {
 	  	position: relative;
 	  	margin: 0;
 	}
-	
 	.post-body img {
 		max-width: 100%;
 		object-fit: contain;
 	}
-
 	.PopularPosts .item-title {
 		padding-bottom: .2em;
 		text-overflow: ellipsis;
 		white-space: pre-line;
 		overflow: hidden;
 	}
-
 	div.popular-posts ul {
-	  padding: 0;
+	  	padding: 0;
 	}
-
 	#widget_bounds {
 		min-height: 0;	
 	}
-	
 	.well {
 		background: transparent;
 	}
-
 	.navbar-header {
 		min-width: 100%;
 		width: 100%;
 		display: flex;
-  	align-items: center;
-  	justify-content: space-between;
-  	flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: row;
 	}
-
 	/* disable blogger link */
 	a[href$="www.blogger.com"] {
-  	color: inherit;
-  	pointer-events: none;
+		color: inherit;
+		pointer-events: none;
 	}
-
-  /* CLEAR FIX*/
-  .clearfix:after {
-      content: ".";
-      display: block;
-      height: 0;
-      clear: both;
-      visibility: hidden;
-  }
-  .clearfix {
-      display: inline-block;
-  }
-  .clearfix {
-      display: block;
-  }
-  .post-outer > a:last-child {
+  	/* CLEAR FIX*/
+  	.clearfix:after {
+      	content: ".";
+      	display: block;
+      	height: 0;
+      	clear: both;
+      	visibility: hidden;
+  	}
+  	.clearfix {
+      	display: inline-block;
+  	}
+  	.clearfix {
+      	display: block;
+  	}
+  	.post-outer > a:last-child {
 		display: none;
 	}
     ]]></b:skin>
@@ -378,17 +375,15 @@
         <span class='icon-bar'/>
         <span class='icon-bar'/>
       </button>
-      
 	  <!-- Title and gravatar logo -->
 	  <a class='navbar-brand' expr:href='data:blog.homepageUrl'>
 		<data:blog.title/>
 	  </a>
-       
-    <div class='navbar-collapse collapse'>
+	  <div class='navbar-collapse collapse'>
 
 	  <b:section class='tabs' id='crosscol' maxwidgets='1' showaddelement='yes'>
-<b:widget id='PageList1' locked='false' title='Paginas' type='PageList' visible='true'>
-  <b:includable id='main'>
+	    	<b:widget id='PageList1' locked='false' title='Paginas' type='PageList' visible='true'>
+          		<b:includable id='main'>
 						<div class='widget-content'>
 							<b:if cond='data:mobile'>
 								<select expr:id='data:widget.instanceId + &quot;_select&quot;'>
@@ -422,11 +417,11 @@
 							<!--<b:include name='quickedit'/> this "broke" menu-->
 						</div>
 						
-					</b:includable>
-</b:widget>
-</b:section>
-			
-			<b:section class='tabs' id='crosscol-overflow' showaddelement='no'/>
+				</b:includable>
+			</b:widget>
+	  </b:section>
+
+	  <b:section class='tabs' id='crosscol-overflow' showaddelement='no'/>
 			<b:if cond='data:blog.pageType == &quot;index&quot;'>
 				<div itemscope='itemscope' itemtype='http://schema.org/Blog' style='display: none;'>
 					<meta expr:content='data:blog.title' itemprop='name'/>
@@ -435,7 +430,7 @@
 					</b:if>
 				</div>
 			</b:if>
-    </div><!--/.navbar-collapse -->
+    	</div><!--/.navbar-collapse -->
     	<div class='col-xs-5 col-sm-3'>
 	        <form action='/search?' autocomplete='on' class='navbar-form' method='get' role='search'>
 	          <div class='input-group'>
@@ -461,8 +456,8 @@
 	<article class='col-xs-12 col-sm-9'>
 										
 	<b:section class='main' id='main' showaddelement='no'>
-<b:widget id='Blog1' locked='true' title='Сообщения блога' type='Blog' visible='true'>
-  <b:includable id='main' var='top'>
+	<b:widget id='Blog1' locked='true' title='Сообщения блога' type='Blog' visible='true'>
+  		<b:includable id='main' var='top'>
 				<b:if cond='data:mobile == &quot;false&quot;'>
 
 					<!-- posts -->
@@ -503,11 +498,11 @@
 									<b:else/>
 										<data:adEnd/>
 								</b:if>
-									<div class='inline-ad'>
-										<data:adCode/>
-									</div>
-									<data:adStart/>
-								</b:if>
+								<div class='inline-ad'>
+									<data:adCode/>
+								</div>
+								<data:adStart/>
+							</b:if>
 							</b:loop>
 							<b:if cond='data:numPosts != 0'>
 								&lt;/div&gt;&lt;/div&gt;
@@ -526,14 +521,14 @@
 					</b:if>
 				</b:if>
 			</b:includable>
-  <b:includable id='backlinkDeleteIcon' var='backlink'>
+  			<b:includable id='backlinkDeleteIcon' var='backlink'>
 				<span expr:class='&quot;item-control &quot; + data:backlink.adminClass'>
-					<a expr:href='data:backlink.deleteUrl' expr:title='data:top.deleteBacklinkMsg'>
-						<img src='//www.blogger.com/img/icon_delete13.gif'/>
-					</a>
+				<a expr:href='data:backlink.deleteUrl' expr:title='data:top.deleteBacklinkMsg'>
+					<img src='//www.blogger.com/img/icon_delete13.gif'/>
+				</a>
 			</span>
 			</b:includable>
-  <b:includable id='backlinks' var='post'>
+			<b:includable id='backlinks' var='post'>
 				<a name='links'/>
 				<h4><data:post.backlinksLabel/></h4>
 				<b:if cond='data:post.numBacklinks != 0'>
@@ -542,10 +537,10 @@
 						<div class='collapsed-backlink backlink-control'>
 							<dt class='comment-title'>
 								<span class='backlink-toggle-zippy'>&#160;</span>
-									<a expr:href='data:backlink.url' rel='nofollow'>
-										<data:backlink.title/>
-									</a>
-									<b:include data='backlink' name='backlinkDeleteIcon'/>
+								<a expr:href='data:backlink.url' rel='nofollow'>
+									<data:backlink.title/>
+								</a>
+								<b:include data='backlink' name='backlinkDeleteIcon'/>
 							</dt>
 							<dd class='comment-body collapseable'>
 								<data:backlink.snippet/>
@@ -562,7 +557,7 @@
 						<a class='comment-link' expr:href='data:post.createLinkUrl' expr:id='data:widget.instanceId + &quot;_backlinks-create-link&quot;' target='_blank'><data:post.createLinkLabel/></a>
 					</p>
 				</b:includable>
-  <b:includable id='comment-form' var='post'>
+  				<b:includable id='comment-form' var='post'>
 				<div class='comment-form'>
 					<a name='comment-form'/>
 					<b:if cond='data:mobile'>
@@ -590,7 +585,7 @@
 					</script>
 				</div>
 			</b:includable>
-  <b:includable id='commentDeleteIcon' var='comment'>
+  			<b:includable id='commentDeleteIcon' var='comment'>
 				<span expr:class='&quot;item-control &quot; + data:comment.adminClass'>
 					<b:if cond='data:showCmtPopup'>
 						<div class='goog-toggle-button'>
@@ -603,7 +598,7 @@
 					</b:if>
 				</span>
 			</b:includable>
-  <b:includable id='comment_count_picker' var='post'>
+  			<b:includable id='comment_count_picker' var='post'>
 				<b:if cond='data:post.forceIframeComments'>
 					<span class='cmt_count_iframe_holder' expr:data-count='data:post.numComments' expr:data-onclick='data:post.addCommentOnclick' expr:data-url='data:post.canonicalUrl'/>
 					<b:else/>
@@ -616,7 +611,7 @@
 					</b:if>
 				</b:if>
 			</b:includable>
-  <b:includable id='comment_picker' var='post'>
+  			<b:includable id='comment_picker' var='post'>
 				<b:if cond='data:post.forceIframeComments'>
 					<b:include data='post' name='iframe_comments'/>
 					<b:if cond='data:post.showThreadedComments'>
@@ -636,7 +631,7 @@
 					</b:if>
 				</b:if>
 			</b:includable>
-  <b:includable id='comments' var='post'>
+  			<b:includable id='comments' var='post'>
 				<div class='comments' id='comments'>
 					<a name='comments'/>
 					<b:if cond='data:post.allowComments'>
@@ -722,15 +717,15 @@
 						<p class='comment-footer'>
 							<b:if cond='data:post.embedCommentForm'>
 								<b:if cond='data:post.allowNewComments'>
-								<b:include data='post' name='comment-form'/>
-									<b:else/>
-										<data:post.noNewCommentsText/>
+								    <b:include data='post' name='comment-form'/>
+                                <b:else/>
+                                    <data:post.noNewCommentsText/>
 								</b:if>
-								<b:else/>
-									<b:if cond='data:post.allowComments'>
-										<a expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><data:postCommentMsg/></a>
-									</b:if>
+                            <b:else/>
+								<b:if cond='data:post.allowComments'>
+									<a expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><data:postCommentMsg/></a>
 								</b:if>
+							</b:if>
 						</p>
 					</b:if>
 					
@@ -749,7 +744,7 @@
 					</div>
 				</div>
 			</b:includable>
-  <b:includable id='feedLinks'>
+  			<b:includable id='feedLinks'>
 				<!-- Blog feed links -->
 				<b:if cond='data:blog.pageType != &quot;item&quot;'> 
 					<b:if cond='data:feedLinks'>
@@ -770,7 +765,7 @@
 						</div>
 				</b:if>
 			</b:includable>
-  <b:includable id='feedLinksBody' var='links'>
+  			<b:includable id='feedLinksBody' var='links'>
 				<div class='feed-links'>
 					<data:feedLinksMsg/>
 					<b:loop values='data:links' var='f'>
@@ -778,7 +773,7 @@
 					</b:loop>
 				</div>
 			</b:includable>
-  <b:includable id='iframe_comments' var='post'>
+  			<b:includable id='iframe_comments' var='post'>
 				<b:if cond='data:post.allowIframeComments'>
 					<script expr:src='data:post.iframeCommentSrc' type='text/javascript'/>
 					<div class='cmt_iframe_holder' expr:data-href='data:post.canonicalUrl' expr:data-viewtype='data:post.viewType'/>
@@ -787,14 +782,13 @@
 					</b:if>
 				</b:if>
 			</b:includable>
-  <b:includable id='mobile-index-post' var='post'>
+  			<b:includable id='mobile-index-post' var='post'>
 				<div class='mobile-date-outer date-outer'>
 					<b:if cond='data:post.dateHeader'>
 						<div class='date-header'>
 							<span><data:post.dateHeader/></span>
 						</div>
 					</b:if>
-	
 					<div class='mobile-post-outer'>
 						<a expr:href='data:post.url'>
 							<h3 class='mobile-index-title entry-title' itemprop='name'><data:post.title/></h3>
@@ -823,7 +817,7 @@
 					</div>
 				</div>
 			</b:includable>
-  <b:includable id='mobile-main' var='top'>
+  			<b:includable id='mobile-main' var='top'>
 				<!-- posts -->
 				<div class='blog-posts hfeed'>
 					<b:include data='top' name='status-message'/>
@@ -839,7 +833,7 @@
 				</div>
 				<b:include name='mobile-nextprev'/>
 			</b:includable>
-  <b:includable id='mobile-nextprev'>
+  			<b:includable id='mobile-nextprev'>
 				<div class='blog-pager' id='blog-pager'>
 					<b:if cond='data:newerPageUrl'>
 						<div class='mobile-link-button' id='blog-pager-newer-link'>
@@ -860,7 +854,7 @@
 				</div>
 				<div class='clear'/>
 			</b:includable>
-  <b:includable id='mobile-post' var='post'>
+  			<b:includable id='mobile-post' var='post'>
 				<div class='date-outer'>
 					<b:if cond='data:post.dateHeader'>
 						<h2 class='date-header'><span><data:post.dateHeader/></span></h2>
@@ -876,7 +870,7 @@
 	
 								<a expr:name='data:post.id'/>
 								<b:if cond='data:post.title'>
-									<h3 class='post-title entry-title' itemprop='name'>
+									<h2 class='post-title entry-title' itemprop='name'>
 										<b:if cond='data:post.link'>
 											<a expr:href='data:post.link'><data:post.title/></a>
 										<b:else/>
@@ -890,7 +884,7 @@
 													<data:post.title/>
 											</b:if>
 										</b:if>
-									</h3>
+									</h2>
 								</b:if>
 	
 								<div class='post-header'>
@@ -966,7 +960,7 @@
 					</div>
 				</div>
 			</b:includable>
-  <b:includable id='nextprev'>
+  			<b:includable id='nextprev'>
 				<div class='blog-pager' id='blog-pager'>
 					<ul class='pager'>
 						<b:if cond='data:olderPageUrl'>
@@ -995,7 +989,7 @@
 				</div>
 				<div class='clear'/>
 			</b:includable>
-  <b:includable id='post' var='post'>
+  			<b:includable id='post' var='post'>
 				<div class='post hentry' itemprop='blogPost' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
 					<b:if cond='data:post.thumbnailUrl'>
 						<meta expr:content='data:post.thumbnailUrl' itemprop='image_url'/>
@@ -1005,7 +999,7 @@
 	
 					<a expr:name='data:post.id'/>
 					<b:if cond='data:post.title'>
-						<h3 class='post-title entry-title' itemprop='name'>
+						<h2 class='post-title entry-title' itemprop='name'>
 							<b:if cond='data:post.link'>
 								<a expr:href='data:post.link'><data:post.title/></a>
 								<b:else/>
@@ -1019,7 +1013,7 @@
 											<data:post.title/>
 									</b:if>
 							</b:if>
-						</h3>
+						</h2>
 					</b:if>
 	
 					<div class='post-header'>
@@ -1077,7 +1071,7 @@
 								<b:if cond='data:post.emailPostUrl'>
 									<span class='item-action'>
 										<a expr:href='data:post.emailPostUrl' expr:title='data:top.emailPostMsg'>
-											<img alt='' class='icon-action' height='13' src='http://img1.blogblog.com/img/icon18_email.gif' width='18'/>
+											<img alt='' class='icon-action' height='13' src='//img1.blogblog.com/img/icon18_email.gif' width='18'/>
 										</a>
 									</span>
 								</b:if>
@@ -1108,16 +1102,16 @@
 					</div>
 				</div>
 			</b:includable>
-  <b:includable id='postQuickEdit' var='post'>
+  			<b:includable id='postQuickEdit' var='post'>
 				<b:if cond='data:post.editUrl'>
 					<span expr:class='&quot;item-control &quot; + data:post.adminClass'>
 						<a expr:href='data:post.editUrl' expr:title='data:top.editPostMsg'>
-							<img alt='' class='icon-action' height='18' src='http://img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/><!-- todo: -->
+							<img alt='' class='icon-action' height='18' src='//img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/><!-- todo: -->
 						</a>
 					</span>
 				</b:if>
 			</b:includable>
-  <b:includable id='shareButtons' var='post'>
+  			<b:includable id='shareButtons' var='post'>
 				<b:if cond='data:top.showEmailButton'>
 					<a class='goog-inline-block share-button sb-email' expr:href='data:post.sharePostUrl + &quot;&amp;target=email&quot;' expr:title='data:top.emailThisMsg' target='_blank'>
 						<span class='share-button-link-text'><data:top.emailThisMsg/></span>
@@ -1147,7 +1141,7 @@
 					<div class='goog-inline-block dummy-container'><data:post.dummyTag/></div>
 				</b:if>
 			</b:includable>
-  <b:includable id='status-message'>
+  			<b:includable id='status-message'>
 				<b:if cond='data:navMessage'>
 					<div class='status-msg-wrap'>
 						<div class='status-msg-body alert alert-info' style='padding-right: 0px'>
@@ -1156,12 +1150,11 @@
 						<div class='status-msg-bg'>
 							<div class='status-msg-hidden'><data:navMessage/></div>
 						</div>
-						
 					</div>
 					<div style='clear: both;'/>
 				</b:if>
 			</b:includable>
-  <b:includable id='threaded-comment-form' var='post'>
+  			<b:includable id='threaded-comment-form' var='post'>
 				<div class='comment-form'>
 					<a name='comment-form'/>
 					<b:if cond='data:mobile'>
@@ -1185,7 +1178,7 @@
 					</script>
 				</div>
 			</b:includable>
-  <b:includable id='threaded_comment_js' var='post'>
+  			<b:includable id='threaded_comment_js' var='post'>
 				<script expr:src='data:post.commentSrc' type='text/javascript'/>
 
 				<script type='text/javascript'>
@@ -1267,8 +1260,7 @@
 					  }
 					  window.bloggercomments = function(data) {
 						var parsed = parse(data);
-						cursor = parsed.length < 50 ? null
-							: parseInt(parsed[parsed.length - 1].timestamp) + 1
+						cursor = parsed.length < 50 ? null : parseInt(parsed[parsed.length - 1].timestamp) + 1
 						callback(parsed);
 						window.bloggercomments = null;
 					  }
@@ -1366,7 +1358,7 @@
 			// ]]>
 				</script>
 			</b:includable>
-  <b:includable id='threaded_comments' var='post'>
+  			<b:includable id='threaded_comments' var='post'>
 				<div class='comments' id='comments'>
 					<a name='comments'/>
 					<h4><data:post.commentLabelFull/>:</h4>
@@ -1490,72 +1482,72 @@
 </b:widget>
 <b:widget id='BlogArchive1' locked='false' title='Архив' type='BlogArchive' visible='true'>
   <b:includable id='main'>
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2><data:title/></h2>
-  </b:if>
-  <div class='widget-content'>
-  <div id='ArchiveList'>
-  <div expr:id='data:widget.instanceId + &quot;_ArchiveList&quot;'>
-    <b:include cond='data:style == &quot;HIERARCHY&quot;' data='data' name='interval'/>
-    <b:include cond='data:style == &quot;FLAT&quot;' data='data' name='flat'/>
-    <b:include cond='data:style == &quot;MENU&quot;' data='data' name='menu'/>
-  </div>
-  </div>
-  <b:include name='quickedit'/>
-  </div>
-</b:includable>
+	  <b:if cond='data:title != &quot;&quot;'>
+		<h2><data:title/></h2>
+	  </b:if>
+	  <div class='widget-content'>
+	  <div id='ArchiveList'>
+	  <div expr:id='data:widget.instanceId + &quot;_ArchiveList&quot;'>
+		<b:include cond='data:style == &quot;HIERARCHY&quot;' data='data' name='interval'/>
+		<b:include cond='data:style == &quot;FLAT&quot;' data='data' name='flat'/>
+		<b:include cond='data:style == &quot;MENU&quot;' data='data' name='menu'/>
+	  </div>
+	  </div>
+	  <b:include name='quickedit'/>
+	  </div>
+  </b:includable>
   <b:includable id='flat' var='data'>
-  <ul class='flat'>
-    <b:loop values='data:data' var='i'>
-      <li class='archivedate'>
-        <a expr:href='data:i.url'><data:i.name/></a> (<data:i.post-count/>)
-      </li>
-    </b:loop>
-  </ul>
-</b:includable>
+	  <ul class='flat'>
+		<b:loop values='data:data' var='i'>
+		  <li class='archivedate'>
+			<a expr:href='data:i.url'><data:i.name/></a> (<data:i.post-count/>)
+		  </li>
+		</b:loop>
+	  </ul>
+  </b:includable>
   <b:includable id='interval' var='intervalData'>
-  <b:loop values='data:intervalData' var='interval'>
-    <ul class='hierarchy'>
-      <li expr:class='&quot;archivedate &quot; + data:interval.expclass'>
-        <b:include cond='data:interval.toggleId' data='interval' name='toggle'/>
-        <a class='post-count-link' expr:href='data:interval.url'>
-          <data:interval.name/>
-        </a>
-        <span class='post-count' dir='ltr'>(<data:interval.post-count/>)</span>
-        <b:include cond='data:interval.data' data='interval.data' name='interval'/>
-        <b:include cond='data:interval.posts' data='interval.posts' name='posts'/>
-      </li>
-    </ul>
-  </b:loop>
-</b:includable>
+	  <b:loop values='data:intervalData' var='interval'>
+		<ul class='hierarchy'>
+		  <li expr:class='&quot;archivedate &quot; + data:interval.expclass'>
+			<b:include cond='data:interval.toggleId' data='interval' name='toggle'/>
+			<a class='post-count-link' expr:href='data:interval.url'>
+			  <data:interval.name/>
+			</a>
+			<span class='post-count' dir='ltr'>(<data:interval.post-count/>)</span>
+			<b:include cond='data:interval.data' data='interval.data' name='interval'/>
+			<b:include cond='data:interval.posts' data='interval.posts' name='posts'/>
+		  </li>
+		</ul>
+	  </b:loop>
+  </b:includable>
   <b:includable id='menu' var='data'>
-  <select expr:id='data:widget.instanceId + &quot;_ArchiveMenu&quot;'>
-    <option value=''><data:title/></option>
-    <b:loop values='data:data' var='i'>
-      <option expr:value='data:i.url'><data:i.name/> (<data:i.post-count/>)</option>
-    </b:loop>
-  </select>
-</b:includable>
+	  <select expr:id='data:widget.instanceId + &quot;_ArchiveMenu&quot;'>
+		<option value=''><data:title/></option>
+		<b:loop values='data:data' var='i'>
+		  <option expr:value='data:i.url'><data:i.name/> (<data:i.post-count/>)</option>
+		</b:loop>
+	  </select>
+  </b:includable>
   <b:includable id='posts' var='posts'>
-  <ul class='posts'>
-    <b:loop values='data:posts' var='post'>
-      <li><a expr:href='data:post.url'><data:post.title/></a></li>
-    </b:loop>
-  </ul>
-</b:includable>
+	  <ul class='posts'>
+		<b:loop values='data:posts' var='post'>
+		  <li><a expr:href='data:post.url'><data:post.title/></a></li>
+		</b:loop>
+	  </ul>
+  </b:includable>
   <b:includable id='toggle' var='interval'>
-  <a class='toggle' href='javascript:void(0)'>
-    <span expr:class='&quot;zippy&quot; + (data:interval.expclass == &quot;expanded&quot; ? &quot; toggle-open&quot; : &quot;&quot;)'>
-      <b:if cond='data:interval.expclass == &quot;expanded&quot;'>
-        &#9660;&#160;
-      <b:elseif cond='data:blog.languageDirection == &quot;rtl&quot;'/>
-        &#9668;&#160;
-      <b:else/>
-        &#9658;&#160;
-      </b:if>
-    </span>
-  </a>
-</b:includable>
+	  <a class='toggle' href='javascript:void(0)'>
+		<span expr:class='&quot;zippy&quot; + (data:interval.expclass == &quot;expanded&quot; ? &quot; toggle-open&quot; : &quot;&quot;)'>
+		  <b:if cond='data:interval.expclass == &quot;expanded&quot;'>
+			&#9660;&#160;
+		  <b:elseif cond='data:blog.languageDirection == &quot;rtl&quot;'/>
+			&#9668;&#160;
+		  <b:else/>
+			&#9658;&#160;
+		  </b:if>
+		</span>
+	  </a>
+  </b:includable>
 </b:widget>
 <b:widget id='Header1' locked='true' title='Baskovsky&apos;s (заголовок)' type='Header' visible='true'>
   <b:includable id='main'>
@@ -1613,18 +1605,18 @@
     </div>
   </b:if>
 </b:includable>
-  <b:includable id='description'>
-  <div class='descriptionwrapper'>
-    <p class='description'><span><data:description/></span></p>
-  </div>
-</b:includable>
+    <b:includable id='description'>
+        <div class='descriptionwrapper'>
+            <p class='description'><span><data:description/></span></p>
+        </div>
+    </b:includable>
   <b:includable id='title'>
-  <b:if cond='data:blog.url == data:blog.homepageUrl'>
-    <data:title/>
-  <b:else/>
-    <a expr:href='data:blog.homepageUrl'><data:title/></a>
-  </b:if>
-</b:includable>
+    <b:if cond='data:blog.url == data:blog.homepageUrl'>
+        <data:title/>
+    <b:else/>
+        <a expr:href='data:blog.homepageUrl'><data:title/></a>
+    </b:if>
+  </b:includable>
 </b:widget>
 <b:widget id='Attribution1' locked='true' title='' type='Attribution' visible='true'>
   <b:includable id='main'>
@@ -1644,11 +1636,11 @@
   </b:includable>
 </b:widget>
 <b:widget id='Navbar1' locked='true' title='Панель навигации' type='Navbar' visible='true'>
-  <b:includable id='main'>&lt;script type=&quot;text/javascript&quot;&gt;
+  <b:includable id='main'>
+  &lt;script type=&quot;text/javascript&quot;&gt;
     function setAttributeOnload(object, attribute, val) {
       if(window.addEventListener) {
-        window.addEventListener(&#39;load&#39;,
-          function(){ object[attribute] = val; }, false);
+        window.addEventListener(&#39;load&#39;, function(){ object[attribute] = val; }, false);
       } else {
         window.attachEvent(&#39;onload&#39;, function(){ object[attribute] = val; });
       }
@@ -1660,21 +1652,22 @@
       gapi.load(&quot;gapi.iframes:gapi.iframes.style.bubble&quot;, function() {
         if (gapi.iframes &amp;&amp; gapi.iframes.getContext) {
           gapi.iframes.getContext().openChild({
-              url: &#39;https://draft.blogger.com/navbar.g?targetBlogID\x3d8222949496683341611\x26blogName\x3dBaskovsky\x27s\x26publishMode\x3dPUBLISH_MODE_HOSTED\x26navbarType\x3dDISABLED\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttp://blog.baskovsky.ru/search\x26blogLocale\x3dru\x26v\x3d2\x26homepageUrl\x3dhttp://blog.baskovsky.ru/\x26vt\x3d6272259965735454103&#39;,
+              url: &#39;https://draft.blogger.com/navbar.g?targetBlogID\x3d8222949496683341611\x26blogName\x3dBaskovsky\x27s\x26publishMode\x3dPUBLISH_MODE_HOSTED\x26navbarType\x3dDISABLED\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttps://blog.baskovsky.ru/search\x26blogLocale\x3dru\x26v\x3d2\x26homepageUrl\x3dhttps://blog.baskovsky.ru/\x26vt\x3d6272259965735454103&#39;,
               where: document.getElementById(&quot;navbar-iframe-container&quot;),
               id: &quot;navbar-iframe&quot;
           });
         }
       });
-    &lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
-(function() {
-var script = document.createElement(&#39;script&#39;);
-script.type = &#39;text/javascript&#39;;
-script.src = &#39;//pagead2.googlesyndication.com/pagead/js/google_top_exp.js&#39;;
-var head = document.getElementsByTagName(&#39;head&#39;)[0];
-if (head) {
-head.appendChild(script);
-}})();
+    &lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+	(function() {
+	var script = document.createElement(&#39;script&#39;);
+	script.type = &#39;text/javascript&#39;;
+	script.src = &#39;//pagead2.googlesyndication.com/pagead/js/google_top_exp.js&#39;;
+	var head = document.getElementsByTagName(&#39;head&#39;)[0];
+	if (head) {
+	head.appendChild(script);
+	}})();
 &lt;/script&gt;
 </b:includable>
 </b:widget>
@@ -1688,33 +1681,33 @@ head.appendChild(script);
 <!-- footer -->
 <footer class='bs-footer' id='footer' role='contentinfo'>
     <div class='container'>
-		<div class='row'>
-      <div class='col-xs-2'>
-				<a href='//feeds.feedburner.com/BaskovskyDenisBlog'>RSS</a>
-      </div>
-    </div>
+        <div class='row'>
+            <div class='col-xs-2'>
+		        <a href='//feeds.feedburner.com/BaskovskyDenisBlog'>RSS</a>
+            </div>
+        </div>
 			
-		<div class='row'>
-			<div class='span3 offset1'>
-				<ul class='unstyled justify'>
+	    <div class='row'>
+		    <div class='span3 offset1'>
+			    <ul class='unstyled justify'>
 					<small>
-					<b:section class='foot_links' id='footer-1' showaddelement='yes'>
-<b:widget id='LinkList2' locked='false' title='Links' type='LinkList' visible='true'>
-  <b:includable id='main'>
-								<b:if cond='data:title'>
-									<h2><data:title/></h2>
-								</b:if>
-								<div class='widget-content'>
-									<ul>
-										<b:loop values='data:links' var='link'>
-											<li><a expr:href='data:link.target'><data:link.name/></a></li>
-										</b:loop>
-									</ul>
-									<b:include name='quickedit'/>
-								</div>
-							</b:includable>
-</b:widget>
-</b:section>
+                        <b:section class='foot_links' id='footer-1' showaddelement='yes'>
+                            <b:widget id='LinkList2' locked='false' title='Links' type='LinkList' visible='true'>
+                                <b:includable id='main'>
+                                    <b:if cond='data:title'>
+                                        <h2><data:title/></h2>
+                                    </b:if>
+                                    <div class='widget-content'>
+                                        <ul>
+                                            <b:loop values='data:links' var='link'>
+                                                <li><a expr:href='data:link.target'><data:link.name/></a></li>
+                                            </b:loop>
+                                        </ul>
+                                        <b:include name='quickedit'/>
+                                    </div>
+                                </b:includable>
+                            </b:widget>
+                        </b:section>
 					</small>
 				</ul>
 			</div>
@@ -1724,17 +1717,17 @@ head.appendChild(script);
 </div><!--/.container-->
 
 <!-- Placed at the end of the document so the pages load faster --> 
-<script src='//yandex.st/jquery/2.1.1/jquery.min.js' type='text/javascript'/>
-<script src='//yandex.st/bootstrap/3.3.1/js/bootstrap.min.js' type='text/javascript'/>
-<script src='//yandex.st/highlightjs/8.2/highlight.min.js' type='text/javascript'/>	
-<script src='//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js' type='text/javascript'/>
-<script src='//cdn.rawgit.com/qertis/bootstrap4blogger/master/libs/spoiler.min.js' type='text/javascript'/>
+<script src="//yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"/>
+<script src="//yandex.st/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"/>
+<script src="//yandex.st/highlightjs/8.2/highlight.min.js" type="text/javascript"/>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js" type="text/javascript"/>
+<script src="//cdn.rawgit.com/qertis/bootstrap4blogger/master/libs/spoiler.min.js" type="text/javascript"/>
 
-<script type='text/javascript'>
+<script type="text/javascript">
     function elementToButton(element) {
-        if(typeof element !== &#39;undefined&#39;) {
-            if(element != &#39;d&#39;) {
-								element.addClass(&#39;btn&#39;);
+        if (typeof element !== &#39;undefined&#39;) {
+            if (element != &#39;d&#39;) {
+              	element.addClass(&#39;btn&#39;);
                 element.addClass(&#39;btn-small&#39;);
                 element.css(&#39;textDecoration&#39;, &#39;none&#39;);
             }
@@ -1744,32 +1737,36 @@ head.appendChild(script);
         var reply = $(classe);
         if (reply instanceof Array) {
           for(r in reply) {
-						elementToButton(r);
+            elementToButton(r);
           }
         } else {
-					elementToButton(reply);
+		  elementToButton(reply);
         }
     }
 	
     $(document).ready(function() {
-      linkToButton(&#39;.comment .continue a&#39;);
-      linkToButton(&#39;.comment .comment-actions.secondary-text a&#39;);
+      	linkToButton(&#39;.comment .continue a&#39;);
+      	linkToButton(&#39;.comment .comment-actions.secondary-text a&#39;);
 		
-			initSpoilers();
-			initHljs();
-			initSelectPicker();
+		initSpoilers();
+		initHljs();
+		initSelectPicker();
 		  
 		/* spoilerAlert */
 		function initSpoilers() {
 			try {
 				$(&#39;spoiler, .spoiler&#39;).spoilerAlert();
-			} catch(e) {
+			} catch (e) {
 				console.log(&#39;spoiler alert is unavailable&#39;)
 			}
 		}
 
 		/* hljs */
 		function initHljs() {
+		    if (!window.hljs) {
+		      console.warn('hljs not found');
+		      return;
+            }
 			hljs.tabReplace = &#39;    &#39;;
 			$(&#39;pre code&#39;).each(function(i, e) {
 				hljs.highlightBlock(e);
@@ -1778,8 +1775,7 @@ head.appendChild(script);
 
 		function initSelectPicker() {
 			var $select = $(&#39;select&#39;);
-			$select.addClass(&#39;selectpicker&#39;)
-				.attr(&#39;data-live-search&#39;, true);
+			$select.addClass(&#39;selectpicker&#39;).attr(&#39;data-live-search&#39;, true);
 			$select.selectpicker();
 		}
     });
