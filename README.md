@@ -1,5 +1,7 @@
-#bootstrap4blogger
-> Blogger Bootstrap Paper Theme
+# bootstrap4blogger
+> Paper Theme
+
+![Image](https://lh5.googleusercontent.com/5ldsQnSiyuagz6nf1ld2uS7ufwtzFNYwrfRnP4aIJgu64B4B1vowYD6P8LpITY_E1BqZQz0g_wtIneS1n5oyMxLKfDHOCCfvzmotWxFL83gRVLzwJzVZIA-GoaiLuTvgUsEDJaOP8Q)
 
 Подключенные библиотеки:
 -----------------
@@ -10,9 +12,9 @@
 * [spoiler-alert](https://github.com/joshbuddy/spoiler-alert)
 
 Используемые CDN:
-Yandex CDN
-CloudFlare
-MaxCDN
+- Yandex CDN
+- CloudFlare
+- MaxCDN
 
 Использование spoiler-alert:
 -----------------
@@ -22,5 +24,3 @@ MaxCDN
 Использование highlight:
 -----------------
 &lt;pre&gt;&lt;code&gt;Ваш экранированный код&lt;/code&gt;&lt;/pre&gt;
-
-[DEMO](http://blog.baskovsky.ru/)
